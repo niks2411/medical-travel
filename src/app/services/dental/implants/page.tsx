@@ -14,34 +14,43 @@ export default function DentalImplantsPage() {
     email: "",
     phone: "",
     service: "implant",
+    timeframe: "1_month",
     message: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [activeTab, setActiveTab] = useState<"eligibility" | "why" | "stages">("eligibility");
+  const [isTabTransitioning, setIsTabTransitioning] = useState(false);
+
+  const changeTab = (tab: "eligibility" | "why" | "stages") => {
+    if (tab !== activeTab) {
+      setIsTabTransitioning(true);
+      setTimeout(() => {
+        setActiveTab(tab);
+        setIsTabTransitioning(false);
+      }, 150);
+    }
+  };
 
   const faqItems = [
     {
-      question: "What do you mean by dental implant?",
-      answer: "A dental implant is a treatment in which a titanium-plated artificial tooth is placed in the jawbone in the place of a missing tooth. It helps your teeth to look and work perfectly and naturally."
-    },
-    {
       question: "How much time is needed for a dental implant and its recovery?",
-      answer: "A dental implant is a short process that takes only a few weeks and can sometimes take up to a few months. Implanting the artificial teeth is quick, but the time depends on the healing process."
+      answer: "The procedure for placing an implant is quick. However, the whole process takes usually few months including the healing time before the permanent crown is placed. The exact timeline will depend on individual healing and will be confirmed by the treating clinic."
     },
     {
-      question: "Is a dental implant treatment appropriate for every missing tooth?",
-      answer: "The suitability of dental implant treatment for your missing tooth is dependent on your bone condition, oral health, and overall medical status."
+      question: "How painful is getting a dental implant?",
+      answer: "Most patients report that the discomfort is much less than expected, often comparable to an ordinary tooth extraction. Local anaesthetic is used so you don't feel any pain during the procedure, and post-operative soreness is usually manageable with standard pain relief."
+    },
+    {
+      question: "Are dental implants right for every missing tooth?",
+      answer: "Whether you’re a good candidate for a dental implant to replace your missing tooth depends on the condition of your bone, your oral health and your overall medical."
+    },
+    {
+      question: "What are the key stages of the dental implant journey?",
+      answer: "The process starts with evaluation and planning, followed by implant placement surgery. After healing time for osseointegration (fusion of the implant with the bone), the abutment is attached and the final custom-made crown is placed."
     },
     {
       question: "Can implant treatment happen in one stage or multiple stages?",
-      answer: "Depending on your oral health, bone quality, and entire treatment plan, your dental implant treatment can be done either one stage or multiple stages."
-    },
-    {
-      question: "What if my jawbone is not sufficient for an implant?",
-      answer: "In the case that you don't have enough space for the dental implant process, like bone grafting, it can be recommended to you by our experts. This allows you to get a stable base for the implant."
-    },
-    {
-      question: "Is it safe to travel to a foreign country for a dental implant?",
-      answer: "Our connection with top-notch dental specialists in countries like India, Singapore, Bali, and many more makes it completely safe and secure for our patients. Whether it's about travelling or the treatment abroad, we have our strong commitments to never compromise on the quality. You will get top-notch perfection and perfect value for your money with HPT company."
+      answer: "Depending on your oral health, bone quality, and overall treatment plan, the dental implant procedure is done either in one stage or multiple stages."
     }
   ];
 
@@ -118,7 +127,7 @@ export default function DentalImplantsPage() {
 
             {/* Paragraph */}
             <p className="text-base sm:text-lg text-brand-teal/70 leading-relaxed mb-10 max-w-lg font-light">
-              Missing teeth not only affect the appearance but also cause multiple problems, and a gap in your smile can result in losing confidence, which impacts your daily life. You can get your missing tooth replaced with a stronger and more beautiful artificial tooth with the help of a dental implant. Most often specialists recommend you with the implants when a fixed long-term replacement is appropriate for you. These artificial teeth are designed in such a way that they can function very similarly to your natural teeth, assist in the improvement of your chewing stability, and support your appearance.
+              Missing teeth not only affect the appearance but also cause multiple problems, and a gap in your smile can result in losing confidence, which impacts your daily life. You can get your missing tooth replaced with a stronger and more beautiful artificial tooth with the help of a dental implant. 
             </p>
 
             {/* Hero Buttons */}
@@ -127,7 +136,7 @@ export default function DentalImplantsPage() {
                 href="#contact"
                 className="bg-brand-teal hover:bg-brand-teal-light text-white font-semibold text-sm px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group cursor-pointer"
               >
-                Discuss Your Options
+                Discuss Your Case
                 <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -226,389 +235,273 @@ export default function DentalImplantsPage() {
             </svg>
           </a>
         </div>
-      </section>
-
-      {/* 3. WHO MAY NEED IT */}
-      <section className="w-full bg-[#f6faf9] py-20 lg:py-32 border-b border-brand-teal/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            
-            {/* Left Column (Sticky info panel) */}
-            <div className="lg:col-span-5 lg:sticky lg:top-28 h-fit text-left">
-              <div className="inline-flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-                Candidacy Criteria
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-6">
-                Who May <br />
-                Need It?
-              </h2>
-
-              <p className="text-base sm:text-lg text-brand-teal/70 leading-relaxed font-light mb-8 max-w-md">
-                Dental implants are the most suitable option for those individuals who are seeking a close to natural replacement for their missing teeth. If you are experiencing any of the following conditions, you may be an appropriate candidate for this treatment:
-              </p>
-
-              <a
-                href="#contact"
-                className="bg-brand-teal hover:bg-brand-teal-light text-white font-semibold text-sm px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 w-fit"
-              >
-                Discuss Your Options
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
-            </div>
-
-            {/* Right Column (Stack of candidacy cards with scroll-stacking effect) */}
-            <div className="lg:col-span-7 flex flex-col gap-12 relative pb-20">
-              
-              {/* Card 1 */}
-              <div className="sticky top-[100px] z-10 bg-white border border-brand-teal/5 rounded-[2rem] p-8 sm:p-10 shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_35px_rgba(0,0,0,0.06)] transition-all duration-300 flex flex-col gap-6 text-left">
-                <div className="flex justify-between items-start w-full">
-                  <div className="w-16 h-16 rounded-2xl bg-brand-mint flex items-center justify-center shrink-0">
-                    <svg className="w-9 h-9 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                  </div>
-                  <div className="text-right leading-none flex flex-col items-end">
-                    <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-brand-teal/50 uppercase">CONDITION</span>
-                    <span className="text-2xl sm:text-3xl font-serif italic text-brand-teal mt-1">01</span>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#1c2e2c] mb-3">
-                    Missing one or more teeth
-                  </h3>
-                  <p className="text-brand-teal/75 text-[15px] leading-relaxed mb-6 font-light">
-                    Whether due to an accident, wear, or extraction, replacing missing teeth is crucial to restore full oral function and support your facial appearance.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-[#f4faf9] text-brand-teal/80 border border-brand-teal/10 px-4 py-1.5 rounded-full font-medium">Tooth Replacement</span>
-                    <span className="text-xs bg-[#f4faf9] text-brand-teal/80 border border-brand-teal/10 px-4 py-1.5 rounded-full font-medium">Restored Smile</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 2 */}
-              <div className="sticky top-[130px] z-20 bg-white border border-brand-teal/5 rounded-[2rem] p-8 sm:p-10 shadow-[0_4px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_40px_rgba(0,0,0,0.07)] transition-all duration-300 flex flex-col gap-6 text-left">
-                <div className="flex justify-between items-start w-full">
-                  <div className="w-16 h-16 rounded-2xl bg-brand-mint flex items-center justify-center shrink-0">
-                    <svg className="w-9 h-9 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                    </svg>
-                  </div>
-                  <div className="text-right leading-none flex flex-col items-end">
-                    <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-brand-teal/50 uppercase">CONDITION</span>
-                    <span className="text-2xl sm:text-3xl font-serif italic text-brand-teal mt-1">02</span>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#1c2e2c] mb-3">
-                    Bone loss in the Jaw or weak bone structure
-                  </h3>
-                  <p className="text-brand-teal/75 text-[15px] leading-relaxed mb-6 font-light">
-                    Implants integrate with your bone to help stimulate natural growth, preventing jawbone resorption that occurs when teeth are left missing.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-[#f4faf9] text-brand-teal/80 border border-brand-teal/10 px-4 py-1.5 rounded-full font-medium">Bone Support</span>
-                    <span className="text-xs bg-[#f4faf9] text-brand-teal/80 border border-brand-teal/10 px-4 py-1.5 rounded-full font-medium">Jaw Preservation</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 3 */}
-              <div className="sticky top-[160px] z-30 bg-white border border-brand-teal/5 rounded-[2rem] p-8 sm:p-10 shadow-[0_4px_35px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_45px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col gap-6 text-left">
-                <div className="flex justify-between items-start w-full">
-                  <div className="w-16 h-16 rounded-2xl bg-brand-mint flex items-center justify-center shrink-0">
-                    <svg className="w-9 h-9 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                  </div>
-                  <div className="text-right leading-none flex flex-col items-end">
-                    <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-brand-teal/50 uppercase">CONDITION</span>
-                    <span className="text-2xl sm:text-3xl font-serif italic text-brand-teal mt-1">03</span>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#1c2e2c] mb-3">
-                    Difficulty in chewing food or speaking clearly
-                  </h3>
-                  <p className="text-brand-teal/75 text-[15px] leading-relaxed mb-6 font-light">
-                    Gaps can make it challenging to chew foods comfortably or pronounce words cleanly. Implants function like natural teeth to restore chewing stability.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-[#f4faf9] text-brand-teal/80 border border-brand-teal/10 px-4 py-1.5 rounded-full font-medium">Speech Support</span>
-                    <span className="text-xs bg-[#f4faf9] text-brand-teal/80 border border-brand-teal/10 px-4 py-1.5 rounded-full font-medium">Chewing Comfort</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 4 */}
-              <div className="sticky top-[190px] z-40 bg-white border border-brand-teal/5 rounded-[2rem] p-8 sm:p-10 shadow-[0_4px_35px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_45px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col gap-6 text-left">
-                <div className="flex justify-between items-start w-full">
-                  <div className="w-16 h-16 rounded-2xl bg-brand-mint flex items-center justify-center shrink-0">
-                    <svg className="w-9 h-9 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <div className="text-right leading-none flex flex-col items-end">
-                    <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-brand-teal/50 uppercase">CONDITION</span>
-                    <span className="text-2xl sm:text-3xl font-serif italic text-brand-teal mt-1">04</span>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#1c2e2c] mb-3">
-                    Desire for a durable & long-term solution
-                  </h3>
-                  <p className="text-brand-teal/75 text-[15px] leading-relaxed mb-6 font-light">
-                    Unlike temporary or loose bridges/dentures, dental implants offer a long-term, highly stable replacement designed to function and look like your natural teeth.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-[#f4faf9] text-brand-teal/80 border border-brand-teal/10 px-4 py-1.5 rounded-full font-medium">Long-lasting</span>
-                    <span className="text-xs bg-[#f4faf9] text-brand-teal/80 border border-brand-teal/10 px-4 py-1.5 rounded-full font-medium">Fixed Support</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 5 */}
-              <div className="sticky top-[220px] z-50 bg-white border border-brand-teal/5 rounded-[2rem] p-8 sm:p-10 shadow-[0_4px_35px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_45px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col gap-6 text-left">
-                <div className="flex justify-between items-start w-full">
-                  <div className="w-16 h-16 rounded-2xl bg-brand-mint flex items-center justify-center shrink-0">
-                    <svg className="w-9 h-9 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div className="text-right leading-none flex flex-col items-end">
-                    <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-[#0f766e]/50 uppercase">CONDITION</span>
-                    <span className="text-2xl sm:text-3xl font-serif italic text-[#0f766e] mt-1">05</span>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#1c2e2c] mb-3">
-                    Several missing teeth or require full mouth restoration
-                  </h3>
-                  <p className="text-brand-teal/75 text-[15px] leading-relaxed mb-6 font-light">
-                    For extensive cases, dental implants can support full arches (all-on-4 or all-on-6) or multiple restorations to completely rehabilitate your mouth.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-[#f4faf9] text-brand-teal/80 border border-brand-teal/10 px-4 py-1.5 rounded-full font-medium">Complete Rehab</span>
-                    <span className="text-xs bg-[#f4faf9] text-brand-teal/80 border border-brand-teal/10 px-4 py-1.5 rounded-full font-medium">Total Restoration</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. ABOUT HPT */}
-      <section className="w-full bg-white py-20 lg:py-28 border-b border-brand-teal/5">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          {/* Tag */}
-          <div className="flex items-center justify-center gap-2 text-[#0f766e] text-xs font-bold tracking-[0.2em] uppercase mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0f766e]"></span>
-            ABOUT HPT
-          </div>
-
-          {/* Centered Paragraph */}
-          <p className="text-brand-teal/80 text-[15px] sm:text-lg font-light leading-relaxed max-w-4xl mx-auto">
-            At HPT, we are well aware that it is very important to opt for a treatment abroad, and most often, individuals have multiple questions in their minds associated with this process. We strive to make this process clearer by assisting patients in exploring appropriate treatment options, providing them with detailed guidance at each step, and supporting them throughout their treatment journey.
-          </p>
-        </div>
-      </section>
-
-      {/* 4.2. DENTAL IMPLANT JOURNEY STEPS */}
+      </section>      {/* INTERACTIVE TABS SECTION */}
       <section className="w-full bg-[#f6faf9] py-20 lg:py-32 border-b border-brand-teal/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center">
-          {/* Tag */}
-          <div className="inline-flex items-center gap-2 text-[#0f766e] text-xs font-bold tracking-[0.2em] uppercase mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0f766e]"></span>
-            TREATMENT STAGES
+          
+          {/* Tab Capsule Buttons (Matches styling of the reference image) */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12 bg-white/40 p-2.5 rounded-full border border-brand-teal/5 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+            <button
+              onMouseEnter={() => changeTab("eligibility")}
+              onClick={() => changeTab("eligibility")}
+              className={`px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer ${
+                activeTab === "eligibility"
+                  ? "bg-brand-teal text-white shadow-md scale-[1.03]"
+                  : "text-brand-teal/80 hover:bg-brand-mint/40 hover:text-brand-teal"
+              }`}
+            >
+              Who May Need It? (Eligibility)
+            </button>
+            <button
+              onMouseEnter={() => changeTab("why")}
+              onClick={() => changeTab("why")}
+              className={`px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer ${
+                activeTab === "why"
+                  ? "bg-brand-teal text-white shadow-md scale-[1.03]"
+                  : "text-brand-teal/80 hover:bg-brand-mint/40 hover:text-brand-teal"
+              }`}
+            >
+              Why Implants?
+            </button>
+            <button
+              onMouseEnter={() => changeTab("stages")}
+              onClick={() => changeTab("stages")}
+              className={`px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer ${
+                activeTab === "stages"
+                  ? "bg-brand-teal text-white shadow-md scale-[1.03]"
+                  : "text-brand-teal/80 hover:bg-brand-mint/40 hover:text-brand-teal"
+              }`}
+            >
+              Treatment Stages
+            </button>
           </div>
 
-          {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-16 text-center max-w-4xl">
-            Your Dental Implant Journey
-          </h2>
-
-          {/* Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
-            
-            {/* Step 1 */}
-            <div className="bg-white border border-[#e5ebe9] rounded-[2rem] p-8 shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_35px_rgba(0,0,0,0.05)] transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <span className="text-[#0f766e] font-serif italic text-4xl font-normal block mb-4">01</span>
-                <h3 className="text-lg sm:text-xl font-bold text-[#1c2e2c] mb-3 group-hover:text-[#0f766e] transition-colors">
-                  Consultation and Report Review
-                </h3>
-                <p className="text-brand-teal/75 text-sm leading-relaxed font-light">
-                  You can get a digital consultation. We have dental specialists who will recommend the best based on your condition. They will check your eligibility for the foreign treatment.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 2 */}
-            <div className="bg-white border border-[#e5ebe9] rounded-[2rem] p-8 shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_35px_rgba(0,0,0,0.05)] transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <span className="text-[#0f766e] font-serif italic text-4xl font-normal block mb-4">02</span>
-                <h3 className="text-lg sm:text-xl font-bold text-[#1c2e2c] mb-3 group-hover:text-[#0f766e] transition-colors">
-                  Bone and Gum Assessment
-                </h3>
-                <p className="text-brand-teal/75 text-sm leading-relaxed font-light">
-                  The condition of your bone and gum will be assessed by specialists properly to serve you with long-term outcomes with the treatment.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 3 */}
-            <div className="bg-white border border-[#e5ebe9] rounded-[2rem] p-8 shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_35px_rgba(0,0,0,0.05)] transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <span className="text-[#0f766e] font-serif italic text-4xl font-normal block mb-4">03</span>
-                <h3 className="text-lg sm:text-xl font-bold text-[#1c2e2c] mb-3 group-hover:text-[#0f766e] transition-colors">
-                  Treatment Planning Before Travel
-                </h3>
-                <p className="text-brand-teal/75 text-sm leading-relaxed font-light">
-                  Specialists formulate a customized dental implant treatment plan for you based on the conditions of your teeth. This plan incorporates estimated procedural stages, expected duration of your stay, and other practical guidance before you opt for travelling.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 4 */}
-            <div className="bg-white border border-[#e5ebe9] rounded-[2rem] p-8 shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_35px_rgba(0,0,0,0.05)] transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <span className="text-[#0f766e] font-serif italic text-4xl font-normal block mb-4">04</span>
-                <h3 className="text-lg sm:text-xl font-bold text-[#1c2e2c] mb-3 group-hover:text-[#0f766e] transition-colors">
-                  Implant Procedure
-                </h3>
-                <p className="text-brand-teal/75 text-sm leading-relaxed font-light">
-                  You will get everything arranged from us; you just have to travel to the country you select, whether it's Singapore, Bali, or India. Our partner dental specialists will provide proper care and guidance for a healing face.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 5 */}
-            <div className="bg-white border border-[#e5ebe9] rounded-[2rem] p-8 shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_35px_rgba(0,0,0,0.05)] transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <span className="text-[#0f766e] font-serif italic text-4xl font-normal block mb-4">05</span>
-                <h3 className="text-lg sm:text-xl font-bold text-[#1c2e2c] mb-3 group-hover:text-[#0f766e] transition-colors">
-                  Healing & Crown Replacement
-                </h3>
-                <p className="text-brand-teal/75 text-sm leading-relaxed font-light">
-                  The final step of a dental implant treatment is the healing and crown replacement. In this step, your implant becomes completely functional, and it appears like a natural tooth.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 6 */}
-            <div className="bg-white border border-[#e5ebe9] rounded-[2rem] p-8 shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_35px_rgba(0,0,0,0.05)] transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <span className="text-[#0f766e] font-serif italic text-4xl font-normal block mb-4">06</span>
-                <h3 className="text-lg sm:text-xl font-bold text-[#1c2e2c] mb-3 group-hover:text-[#0f766e] transition-colors">
-                  Follow Up
-                </h3>
-                <p className="text-brand-teal/75 text-sm leading-relaxed font-light">
-                  After the treatment, the healing of the implant is very important. You will get a natural finish, and if you face any problem, we will always be in touch and ready to help you.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 5. PROCESS / TIMELINE SECTION */}
-      <section id="process" className="w-full bg-white py-20 lg:py-32 border-b border-brand-teal/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            <div className="lg:col-span-3 flex flex-col items-start text-left">
-              <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-                Why Implants
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-8">
-                Why Many Patients <br />
-                Consider <br />
-                <span className="font-serif italic font-normal text-brand-teal block mt-1">Dental Implants</span>
-              </h2>
-
-              <a
-                href="#contact"
-                className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit mb-10 lg:mb-0 cursor-pointer"
-              >
-                Request Consultation
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
-            </div>
-
-            <div className="lg:col-span-4 w-full">
-              <div className="w-full relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white">
-                <Image
-                  src="/mindera_process.png"
-                  alt="Counseling therapist explaining steps"
-                  fill
-                  className="object-cover"
-                  sizes="(max-w-1024px) 40vw, 30vw"
-                />
-              </div>
-            </div>
-
-            <div className="lg:col-span-5 relative pl-4 sm:pl-8 w-full text-left">
-              <div className="absolute left-10 sm:left-14 top-8 bottom-8 w-[2px] bg-[#d1dcd9] pointer-events-none" />
-
-              <div className="flex flex-col gap-8">
-                {journeySteps.map((step, idx) => (
-                  <div key={idx} className="flex gap-6 items-start relative group">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#d1dcd9] text-[#1c2e2c]/70 flex items-center justify-center font-bold text-lg shrink-0 shadow-sm z-10 border-4 border-white transition-transform duration-300 group-hover:scale-105 group-hover:bg-brand-teal group-hover:text-white">
-                      {step.num}
-                    </div>
-                    <div className="flex-1 pt-1 sm:pt-2">
-                      <h4 className="text-lg font-bold text-[#1c2e2c] mb-1">
-                        {step.title}
-                      </h4>
-                      <p className="text-[#1c2e2c]/70 text-[13px] leading-relaxed font-light">
-                        {step.desc}
+          {/* Content Wrapper with animation transitions */}
+          <div className={`w-full bg-white border border-brand-teal/5 rounded-[2.5rem] p-8 sm:p-12 shadow-[0_10px_45px_rgba(0,0,0,0.02)] transition-all duration-300 ease-in-out ${isTabTransitioning ? "opacity-0 translate-y-1.5" : "opacity-100 translate-y-0"}`}>
+            {activeTab === "eligibility" && (
+              <div className="flex flex-col gap-10">
+                <div className="text-left max-w-3xl">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#1c2e2c] mb-4">
+                    Who May Need Dental Implants?
+                  </h3>
+                  <p className="text-brand-teal/70 text-base font-light leading-relaxed">
+                    Dental implants are the most suitable option for individuals seeking a close-to-natural replacement for missing teeth. If you experience any of the following conditions, you may be an appropriate candidate:
+                  </p>
+                </div>
+                
+                {/* 2x2 Grid of candidacy criteria */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                  {/* Card 1 */}
+                  <div className="bg-[#f4faf9] border border-brand-teal/5 rounded-2xl p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                    <div>
+                      <div className="flex justify-between items-start mb-4">
+                        <div className="w-12 h-12 rounded-xl bg-brand-mint flex items-center justify-center shrink-0">
+                          <svg className="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeDasharray="3 3" d="M12 2C6.5 2 5.5 6.5 5.5 8c0 4.5 4 4.5 4 8c0 2-2 3.5-2 3.5C7.5 19.5 11 20 12 17c1 3 4.5 2.5 4.5 2.5s-2-1.5-2-3.5c0-3.5 4-3.5 4-8c0-1.5-1-6-6.5-6z" />
+                          </svg>
+                        </div>
+                        <span className="text-xl font-serif italic text-brand-teal/50">01</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Missing one or more teeth</h4>
+                      <p className="text-[#556966] text-sm leading-relaxed font-light mb-4">
+                        Whether due to an accident, wear, or extraction, replacing missing teeth is crucial to restore full oral function and support your facial appearance.
                       </p>
                     </div>
+                    <div className="flex gap-2 mt-auto">
+                      <span className="text-[10px] bg-white text-brand-teal/80 border border-brand-teal/10 px-3 py-1 rounded-full font-medium">Tooth Replacement</span>
+                      <span className="text-[10px] bg-white text-brand-teal/80 border border-brand-teal/10 px-3 py-1 rounded-full font-medium">Restored Smile</span>
+                    </div>
                   </div>
-                ))}
+
+                  {/* Card 2 */}
+                  <div className="bg-[#f4faf9] border border-brand-teal/5 rounded-2xl p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                    <div>
+                      <div className="flex justify-between items-start mb-4">
+                        <div className="w-12 h-12 rounded-xl bg-brand-mint flex items-center justify-center shrink-0">
+                          <svg className="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.528V3a1 1 0 0 1 1-1h0" />
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10 3 3 0 0 0 3.648.648 5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21" />
+                          </svg>
+                        </div>
+                        <span className="text-xl font-serif italic text-brand-teal/50">02</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Difficulty in chewing food or speaking clearly</h4>
+                      <p className="text-[#556966] text-sm leading-relaxed font-light mb-4">
+                        Gaps can make it challenging to chew foods comfortably or pronounce words cleanly. Implants function like natural teeth to restore chewing stability.
+                      </p>
+                    </div>
+                    <div className="flex gap-2 mt-auto">
+                      <span className="text-[10px] bg-white text-brand-teal/80 border border-brand-teal/10 px-3 py-1 rounded-full font-medium">Speech Support</span>
+                      <span className="text-[10px] bg-white text-brand-teal/80 border border-brand-teal/10 px-3 py-1 rounded-full font-medium">Chewing Comfort</span>
+                    </div>
+                  </div>
+
+                  {/* Card 3 */}
+                  <div className="bg-[#f4faf9] border border-brand-teal/5 rounded-2xl p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                    <div>
+                      <div className="flex justify-between items-start mb-4">
+                        <div className="w-12 h-12 rounded-xl bg-brand-mint flex items-center justify-center shrink-0">
+                          <svg className="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z" />
+                          </svg>
+                        </div>
+                        <span className="text-xl font-serif italic text-brand-teal/50">03</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Desire for a durable & long-term solution</h4>
+                      <p className="text-[#556966] text-sm leading-relaxed font-light mb-4">
+                        Unlike temporary or loose bridges/dentures, dental implants offer a long-term, highly stable replacement designed to function and look like your natural teeth.
+                      </p>
+                    </div>
+                    <div className="flex gap-2 mt-auto">
+                      <span className="text-[10px] bg-white text-brand-teal/80 border border-brand-teal/10 px-3 py-1 rounded-full font-medium">Long-lasting</span>
+                      <span className="text-[10px] bg-white text-brand-teal/80 border border-brand-teal/10 px-3 py-1 rounded-full font-medium">Fixed Support</span>
+                    </div>
+                  </div>
+
+                  {/* Card 4 */}
+                  <div className="bg-[#f4faf9] border border-brand-teal/5 rounded-2xl p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                    <div>
+                      <div className="flex justify-between items-start mb-4">
+                        <div className="w-12 h-12 rounded-xl bg-brand-mint flex items-center justify-center shrink-0">
+                          <svg className="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <span className="text-xl font-serif italic text-[#0f766e]/50">04</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Several missing teeth or require full mouth restoration</h4>
+                      <p className="text-[#556966] text-sm leading-relaxed font-light mb-4">
+                        For extensive cases, dental implants can support full arches (all-on-4 or all-on-6) or multiple restorations to completely rehabilitate your mouth.
+                      </p>
+                    </div>
+                    <div className="flex gap-2 mt-auto">
+                      <span className="text-[10px] bg-white text-brand-teal/80 border border-brand-teal/10 px-3 py-1 rounded-full font-medium">Complete Rehab</span>
+                      <span className="text-[10px] bg-white text-brand-teal/80 border border-brand-teal/10 px-3 py-1 rounded-full font-medium">Total Restoration</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
 
+            {activeTab === "why" && (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-left">
+                {/* Left Side: Text and Timeline */}
+                <div className="lg:col-span-7">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#1c2e2c] mb-4">
+                    Why Patients Consider Dental Implants
+                  </h3>
+                  <p className="text-brand-teal/70 text-base font-light leading-relaxed mb-8">
+                    Implants offer a wide range of benefits that traditional restorations simply cannot provide, securing your smile for decades.
+                  </p>
+
+                  <div className="relative pl-6 border-l-2 border-[#d1dcd9] flex flex-col gap-6">
+                    {journeySteps.map((step, idx) => (
+                      <div key={idx} className="flex gap-6 items-start relative group">
+                        <div className="absolute -left-[35px] w-6 h-6 rounded-full bg-brand-teal text-white flex items-center justify-center font-bold text-xs shadow-sm border-2 border-white">
+                          {idx + 1}
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-base font-bold text-[#1c2e2c] mb-0.5">
+                            {step.title}
+                          </h4>
+                          <p className="text-[#1c2e2c]/75 text-xs sm:text-sm leading-relaxed font-light">
+                            {step.desc}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right Side: Image */}
+                <div className="lg:col-span-5 w-full">
+                  <div className="w-full relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-lg border border-white bg-white">
+                    <Image
+                      src="/mindera_process.png"
+                      alt="Why Implants process visual"
+                      fill
+                      className="object-cover"
+                      sizes="(max-w-1024px) 100vw, 400px"
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === "stages" && (
+              <div className="flex flex-col gap-10 text-left">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#1c2e2c] mb-4">
+                    Your Dental Implant Journey
+                  </h3>
+                  <p className="text-brand-teal/70 text-base font-light leading-relaxed">
+                    Our partner specialists guide you through a step-by-step treatment path, ensuring transparency and professional care at every stage.
+                  </p>
+                </div>
+
+                {/* 3x2 Grid of Journey Steps */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {/* Step 1 */}
+                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">01</span>
+                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Consultation and Report Review</h4>
+                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
+                      You can get a digital consultation. We have dental specialists who will recommend the best based on your condition. They will check your eligibility for the foreign treatment.
+                    </p>
+                  </div>
+                  
+                  {/* Step 2 */}
+                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">02</span>
+                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Bone and Gum Assessment</h4>
+                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
+                      The condition of your bone and gum will be assessed by specialists properly to serve you with long-term outcomes with the treatment.
+                    </p>
+                  </div>
+
+                  {/* Step 3 */}
+                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">03</span>
+                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Treatment Planning Before Travel</h4>
+                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
+                      Specialists formulate a customized dental implant treatment plan for you based on the conditions of your teeth. This plan incorporates estimated procedural stages, expected duration of your stay, and other practical guidance before you opt for travelling.
+                    </p>
+                  </div>
+
+                  {/* Step 4 */}
+                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">04</span>
+                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Implant Procedure</h4>
+                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
+                      You will get everything arranged from us; you just have to travel to the country you select, whether it's Singapore, Bali, or India. Our partner dental specialists will provide proper care and guidance for a healing face.
+                    </p>
+                  </div>
+
+                  {/* Step 5 */}
+                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">05</span>
+                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Healing & Crown Replacement</h4>
+                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
+                      The final step of a dental implant treatment is the healing and crown replacement. In this step, your implant becomes completely functional, and it appears like a natural tooth.
+                    </p>
+                  </div>
+
+                  {/* Step 6 */}
+                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">06</span>
+                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Follow Up</h4>
+                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
+                      After the treatment, the healing of the implant is very important. You will get a natural finish, and if you face any problem, we will always be in touch and ready to help you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
 
-
-      {/* 7. WHY TREATMENT ABROAD */}
-      <section className="w-full bg-white py-12 lg:py-16 border-b border-brand-teal/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-            Global Health Options
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-6 text-center max-w-4xl">
-            Why treatment abroad?
-          </h2>
-
-          <p className="text-base sm:text-lg text-brand-teal/95 font-light leading-relaxed max-w-3xl text-center">
-            Many patients explore dental implant treatment abroad to access trusted clinics, specialist support, and organised treatment planning altogether. For major dental procedures, these trusted clinics abroad may also offer patients shorter waiting periods with several cost benefits depending on the treatment and destination.
-          </p>
-
-        </div>
-      </section>
 
       {/* 7.5. GET AN INITIAL IMPLANT ASSESSMENT (CTA Video Banner Layout - Positioned Exactly Above Testimonials) */}
       <section className="w-full text-white py-24 sm:py-32 relative overflow-hidden flex items-center justify-center min-h-[500px]">
@@ -963,6 +856,28 @@ export default function DentalImplantsPage() {
                   </div>
 
                   <div className="flex flex-col gap-1">
+                    <label htmlFor="timeframe" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">When are you considering treatment abroad?</label>
+                    <div className="relative">
+                      <select
+                        id="timeframe"
+                        value={formData.timeframe}
+                        onChange={(e) => setFormData({ ...formData, timeframe: e.target.value })}
+                        className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] focus:outline-none focus:border-brand-teal/40 transition-colors appearance-none cursor-pointer"
+                      >
+                        <option value="1_month">Within 1 Month</option>
+                        <option value="3_months">Within 3 Months</option>
+                        <option value="6_months">Within 6 Months</option>
+                        <option value="exploring">Exploring Options Only</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#1c2e2c]/70">
+                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-1">
                     <label htmlFor="message" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Tell us about your dental needs</label>
                     <textarea
                       id="message"
@@ -1012,7 +927,7 @@ export default function DentalImplantsPage() {
                   Know More About <span className="font-serif italic font-normal text-brand-teal">HPT & Dental Implants</span>
                 </h3>
                 <p className="text-[13px] text-brand-teal/75 leading-relaxed font-light mt-3">
-                  Here you can find answers to some frequently asked questions about dental implants and our medical travel coordination.
+                  Thinking about dental implants often raises a lot of questions. Here are direct, simple answers to the questions people ask most often—with more detail throughout this page.
                 </p>
               </div>
 
