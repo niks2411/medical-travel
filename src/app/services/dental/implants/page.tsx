@@ -250,7 +250,69 @@ export default function DentalImplantsPage() {
             </svg>
           </a>
         </div>
-      </section>      {/* INTERACTIVE TABS SECTION */}
+      </section>
+
+      {/* 2.5. DENTAL IMPLANTS STEPS VISUALIZATION SECTION */}
+      <section className="w-full bg-white py-20 lg:py-28 border-b border-brand-teal/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          {/* Top Row: Content on left, Square Image on right */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-12">
+            
+            {/* Left Column: Content */}
+            <div className="lg:col-span-7 flex flex-col justify-center text-left">
+              <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
+                Treatment Steps
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] mb-6 font-sans">
+                Dental Implant <br />
+                <span className="font-serif italic font-normal text-brand-teal block mt-2">
+                  Treatment Steps
+                </span>
+              </h2>
+
+              <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed font-light mb-6">
+                Replacing missing teeth with dental implants involves a precise surgical procedure. Under local anesthesia, the titanium implant post is placed in the jawbone, serving as a sturdy replacement tooth root. 
+              </p>
+
+              <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed font-light">
+                Over the healing phase (osseointegration), the bone fuses with the implant surface. Finally, the connector abutment and custom-fabricated tooth crown are secured, completing your smile with natural appearance and functionality.
+              </p>
+            </div>
+
+            {/* Right Column: Square Image */}
+            <div className="lg:col-span-5 w-full">
+              <div className="w-full relative aspect-square rounded-[2rem] overflow-hidden shadow-lg border border-brand-teal/5 bg-[#f6faf9] flex items-center justify-center">
+                <Image
+                  src="/1.jpeg"
+                  alt="Dental implant square step diagram"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-[1.02]"
+                  sizes="(max-w-1024px) 100vw, 400px"
+                />
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom Row: Rectangle Image */}
+          <div className="w-full">
+            <div className="w-full relative aspect-[16/9] sm:aspect-[21/9] md:aspect-[24/9] lg:aspect-[32/11] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-lg border border-brand-teal/5 bg-[#f6faf9] flex items-center justify-center">
+              <Image
+                src="/2.jpeg"
+                alt="Dental implant rectangle procedure visualization"
+                fill
+                className="object-cover transition-transform duration-500 hover:scale-[1.01]"
+                sizes="100vw"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* INTERACTIVE TABS SECTION */}
       <section className="w-full bg-[#f6faf9] py-20 lg:py-32 border-b border-brand-teal/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center">
           
