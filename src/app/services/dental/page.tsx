@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,6 +10,34 @@ export default function DentalServicesPage() {
   const [activeFaq, setActiveFaq] = useState<number>(0);
   const [heroVideoLoaded, setHeroVideoLoaded] = useState(false);
   const [ctaVideoLoaded, setCtaVideoLoaded] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    services: ["implant"],
+    message: "",
+  });
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest(".custom-select-container")) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formData.services.length === 0) {
+      return;
+    }
+    setFormSubmitted(true);
+  };
 
   const faqItems = [
     {
@@ -1225,78 +1253,149 @@ export default function DentalServicesPage() {
 
             {/* Right Column - Booking Form */}
             <div className="lg:col-span-6 w-full">
-              <form className="bg-white border border-[#e5ebe9] rounded-[2rem] p-6 sm:p-10 shadow-[0_10px_45px_rgba(0,0,0,0.02)] flex flex-col gap-6 text-left">
-                <div className="flex flex-col gap-1">
-                  <label htmlFor="name" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Full Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="John Doe"
-                    className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] placeholder-[#1c2e2c]/45 focus:outline-none focus:border-brand-teal/40 transition-colors"
-                    required
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <label htmlFor="email" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="john@example.com"
-                    className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] placeholder-[#1c2e2c]/45 focus:outline-none focus:border-brand-teal/40 transition-colors"
-                    required
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <label htmlFor="phone" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Phone Number</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    placeholder="+1 (555) 000-0000"
-                    className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] placeholder-[#1c2e2c]/45 focus:outline-none focus:border-brand-teal/40 transition-colors"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <label htmlFor="service" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Select Treatment / Service</label>
-                  <div className="relative">
-                    <select
-                      id="service"
-                      className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] focus:outline-none focus:border-brand-teal/40 transition-colors appearance-none cursor-pointer"
-                    >
-                      <option value="implant">Dental Implants</option>
-                      <option value="bridge">Dental Bridges</option>
-                      <option value="veneer">Dental Veneers</option>
-                      <option value="crown">Dental Crowns</option>
-                      <option value="restoration">Full Mouth Restoration</option>
-                      <option value="consultation">General Consultation</option>
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#1c2e2c]/70">
-                      <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                      </svg>
-                    </div>
+              {formSubmitted ? (
+                <div className="bg-white border border-[#e5ebe9] rounded-[2rem] p-6 sm:p-10 shadow-[0_10px_45px_rgba(0,0,0,0.02)] py-20 text-center">
+                  <div className="w-16 h-16 bg-brand-mint rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
+                  <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
+                  <p className="text-brand-teal/70 text-sm font-light max-w-sm mx-auto">
+                    We have received your dental scan details and will get back to you with clinic review suggestions within 24 hours.
+                  </p>
                 </div>
+              ) : (
+                <form onSubmit={handleFormSubmit} className="bg-white border border-[#e5ebe9] rounded-[2rem] p-6 sm:p-10 shadow-[0_10px_45px_rgba(0,0,0,0.02)] flex flex-col gap-6 text-left">
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="name" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Full Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="John Doe"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] placeholder-[#1c2e2c]/45 focus:outline-none focus:border-brand-teal/40 transition-colors"
+                      required
+                    />
+                  </div>
 
-                <div className="flex flex-col gap-1">
-                  <label htmlFor="message" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Additional Message</label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    placeholder="Tell us about your dental needs..."
-                    className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] placeholder-[#1c2e2c]/45 focus:outline-none focus:border-brand-teal/40 transition-colors resize-none"
-                  ></textarea>
-                </div>
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="email" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Email Address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="john@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] placeholder-[#1c2e2c]/45 focus:outline-none focus:border-brand-teal/40 transition-colors"
+                      required
+                    />
+                  </div>
 
-                <button
-                  type="submit"
-                  className="bg-[#1c2e2c] hover:bg-[#283e3c] text-white font-semibold text-sm py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 w-full mt-2 cursor-pointer"
-                >
-                  Submit your Inquiry &rarr;
-                </button>
-              </form>
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="phone" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Phone Number</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      placeholder="+1 (555) 000-0000"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] placeholder-[#1c2e2c]/45 focus:outline-none focus:border-brand-teal/40 transition-colors"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-1 custom-select-container relative">
+                    <label className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Select Treatment / Service</label>
+                    <div className="relative">
+                      <button
+                        type="button"
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] focus:outline-none focus:border-brand-teal/40 transition-colors flex justify-between items-center cursor-pointer text-left"
+                      >
+                        <span className="truncate">
+                          {formData.services.length > 0
+                            ? formData.services
+                                .map((s) => {
+                                  const opt = [
+                                    { value: "implant", label: "Dental Implants" },
+                                    { value: "bridge", label: "Dental Bridges" },
+                                    { value: "veneer", label: "Dental Veneers" },
+                                    { value: "crown", label: "Dental Crowns" },
+                                    { value: "restoration", label: "Full Mouth Restoration" },
+                                    { value: "consultation", label: "General Consultation" },
+                                  ].find((o) => o.value === s);
+                                  return opt ? opt.label : s;
+                                })
+                                .join(", ")
+                            : "Select Treatment(s)"}
+                        </span>
+                        <svg className={`fill-current h-4 w-4 text-[#1c2e2c]/70 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                      </button>
+
+                      {isDropdownOpen && (
+                        <div className="absolute top-full left-0 z-50 w-full mt-1.5 bg-white border border-[#e5ebe9] rounded-xl shadow-lg py-1.5 max-h-60 overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-150">
+                          {[
+                            { value: "implant", label: "Dental Implants" },
+                            { value: "bridge", label: "Dental Bridges" },
+                            { value: "veneer", label: "Dental Veneers" },
+                            { value: "crown", label: "Dental Crowns" },
+                            { value: "restoration", label: "Full Mouth Restoration" },
+                            { value: "consultation", label: "General Consultation" },
+                          ].map((option) => {
+                            const isChecked = formData.services.includes(option.value);
+                            return (
+                              <div
+                                key={option.value}
+                                onClick={() => {
+                                  const nextServices = isChecked
+                                    ? formData.services.filter((v) => v !== option.value)
+                                    : [...formData.services, option.value];
+                                  setFormData({ ...formData, services: nextServices });
+                                }}
+                                className="flex items-center gap-3 px-4 py-3 hover:bg-brand-mint/30 cursor-pointer text-sm text-[#1c2e2c] transition-colors"
+                              >
+                                <div className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-colors ${isChecked ? "bg-brand-teal border-brand-teal text-white" : "border-[#cbd5e1] bg-white"}`}>
+                                  {isChecked && (
+                                    <svg className="w-3.5 h-3.5 stroke-current stroke-[3] fill-none" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                  )}
+                                </div>
+                                <span className={isChecked ? "font-semibold text-brand-teal" : "font-normal"}>{option.label}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                    {formData.services.length === 0 && (
+                      <span className="text-[11px] text-red-500 mt-0.5">Please select at least one treatment.</span>
+                    )}
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="message" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Additional Message</label>
+                    <textarea
+                      id="message"
+                      rows={4}
+                      placeholder="Tell us about your dental needs..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] placeholder-[#1c2e2c]/45 focus:outline-none focus:border-brand-teal/40 transition-colors resize-none"
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="bg-[#1c2e2c] hover:bg-[#283e3c] text-white font-semibold text-sm py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 w-full mt-2 cursor-pointer"
+                  >
+                    Submit your Inquiry &rarr;
+                  </button>
+                </form>
+              )}
             </div>
 
           </div>

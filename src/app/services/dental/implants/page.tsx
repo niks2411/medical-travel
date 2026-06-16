@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -13,13 +13,25 @@ export default function DentalImplantsPage() {
     name: "",
     email: "",
     phone: "",
-    service: "implant",
+    services: ["implant"],
     timeframe: "1_month",
     message: "",
   });
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [activeTab, setActiveTab] = useState<"eligibility" | "why" | "stages">("eligibility");
   const [isTabTransitioning, setIsTabTransitioning] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest(".custom-select-container")) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const changeTab = (tab: "eligibility" | "why" | "stages") => {
     if (tab !== activeTab) {
@@ -99,6 +111,9 @@ export default function DentalImplantsPage() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (formData.services.length === 0) {
+      return;
+    }
     setFormSubmitted(true);
   };
 
@@ -240,14 +255,14 @@ export default function DentalImplantsPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center">
           
           {/* Tab Capsule Buttons (Matches styling of the reference image) */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12 bg-white/40 p-2.5 rounded-full border border-brand-teal/5 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12 bg-white/60 p-3 rounded-full border border-brand-teal/10 shadow-[0_8px_30px_rgba(8,72,67,0.03)]">
             <button
               onMouseEnter={() => changeTab("eligibility")}
               onClick={() => changeTab("eligibility")}
-              className={`px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer ${
+              className={`px-8 md:px-11 py-4 md:py-[18px] rounded-full font-bold text-base md:text-lg transition-all duration-300 cursor-pointer ${
                 activeTab === "eligibility"
-                  ? "bg-brand-teal text-white shadow-md scale-[1.03]"
-                  : "text-brand-teal/80 hover:bg-brand-mint/40 hover:text-brand-teal"
+                  ? "bg-brand-teal text-white shadow-[0_10px_25px_-5px_rgba(8,72,67,0.35)] scale-[1.05]"
+                  : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
               }`}
             >
               Who May Need It? (Eligibility)
@@ -255,10 +270,10 @@ export default function DentalImplantsPage() {
             <button
               onMouseEnter={() => changeTab("why")}
               onClick={() => changeTab("why")}
-              className={`px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer ${
+              className={`px-8 md:px-11 py-4 md:py-[18px] rounded-full font-bold text-base md:text-lg transition-all duration-300 cursor-pointer ${
                 activeTab === "why"
-                  ? "bg-brand-teal text-white shadow-md scale-[1.03]"
-                  : "text-brand-teal/80 hover:bg-brand-mint/40 hover:text-brand-teal"
+                  ? "bg-brand-teal text-white shadow-[0_10px_25px_-5px_rgba(8,72,67,0.35)] scale-[1.05]"
+                  : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
               }`}
             >
               Why Implants?
@@ -266,10 +281,10 @@ export default function DentalImplantsPage() {
             <button
               onMouseEnter={() => changeTab("stages")}
               onClick={() => changeTab("stages")}
-              className={`px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer ${
+              className={`px-8 md:px-11 py-4 md:py-[18px] rounded-full font-bold text-base md:text-lg transition-all duration-300 cursor-pointer ${
                 activeTab === "stages"
-                  ? "bg-brand-teal text-white shadow-md scale-[1.03]"
-                  : "text-brand-teal/80 hover:bg-brand-mint/40 hover:text-brand-teal"
+                  ? "bg-brand-teal text-white shadow-[0_10px_25px_-5px_rgba(8,72,67,0.35)] scale-[1.05]"
+                  : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
               }`}
             >
               Treatment Stages
@@ -280,7 +295,7 @@ export default function DentalImplantsPage() {
           <div className={`w-full bg-white border border-brand-teal/5 rounded-[2.5rem] p-8 sm:p-12 shadow-[0_10px_45px_rgba(0,0,0,0.02)] transition-all duration-300 ease-in-out ${isTabTransitioning ? "opacity-0 translate-y-1.5" : "opacity-100 translate-y-0"}`}>
             {activeTab === "eligibility" && (
               <div className="flex flex-col gap-10">
-                <div className="text-left max-w-3xl">
+                <div className="text-left w-full">
                   <h3 className="text-2xl sm:text-3xl font-bold text-[#1c2e2c] mb-4">
                     Who May Need Dental Implants?
                   </h3>
@@ -429,72 +444,147 @@ export default function DentalImplantsPage() {
             )}
 
             {activeTab === "stages" && (
-              <div className="flex flex-col gap-10 text-left">
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#1c2e2c] mb-4">
-                    Your Dental Implant Journey
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
+                
+                {/* Left Column - Headline + Tag + Button */}
+                <div className="lg:col-span-3 flex flex-col items-start text-left">
+                  <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
+                    Our Process
+                  </div>
+
+                  <h3 className="text-3xl sm:text-4xl lg:text-[38px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-8">
+                    Your Dental <br />
+                    Implant <br />
+                    Journey <br />
+                    <span className="font-serif italic font-normal text-brand-teal block mt-1">With HPT</span>
                   </h3>
-                  <p className="text-brand-teal/70 text-base font-light leading-relaxed">
-                    Our partner specialists guide you through a step-by-step treatment path, ensuring transparency and professional care at every stage.
-                  </p>
+
+                  <a
+                    href="#contact"
+                    className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit mb-10 lg:mb-0 cursor-pointer"
+                  >
+                    Request Consultation
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
                 </div>
 
-                {/* 3x2 Grid of Journey Steps */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {/* Step 1 */}
-                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">01</span>
-                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Consultation and Report Review</h4>
-                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
-                      You can get a digital consultation. We have dental specialists who will recommend the best based on your condition. They will check your eligibility for the foreign treatment.
-                    </p>
+                {/* Middle Column - Portrait Image */}
+                <div className="lg:col-span-4 w-full">
+                  <div className="w-full relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white">
+                    <Image
+                      src="/mindera_process.png"
+                      alt="Specialist explaining implant process"
+                      fill
+                      className="object-cover"
+                      sizes="(max-w-1024px) 40vw, 30vw"
+                    />
                   </div>
+                </div>
+
+                {/* Right Column - Steps timeline */}
+                <div className="lg:col-span-5 relative pl-4 sm:pl-8 w-full">
                   
-                  {/* Step 2 */}
-                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">02</span>
-                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Bone and Gum Assessment</h4>
-                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
-                      The condition of your bone and gum will be assessed by specialists properly to serve you with long-term outcomes with the treatment.
-                    </p>
-                  </div>
+                  {/* vertical connecting line */}
+                  <div className="absolute left-10 sm:left-14 top-8 bottom-8 w-[2px] bg-[#d1dcd9] pointer-events-none" />
 
-                  {/* Step 3 */}
-                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">03</span>
-                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Treatment Planning Before Travel</h4>
-                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
-                      Specialists formulate a customized dental implant treatment plan for you based on the conditions of your teeth. This plan incorporates estimated procedural stages, expected duration of your stay, and other practical guidance before you opt for travelling.
-                    </p>
-                  </div>
+                  <div className="flex flex-col gap-8">
+                    
+                    {/* Step 1 */}
+                    <div className="flex gap-6 items-start relative group">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-brand-teal text-white flex items-center justify-center font-bold text-lg shrink-0 shadow-md z-10 border-4 border-white transition-transform duration-300 group-hover:scale-105">
+                        01
+                      </div>
+                      <div className="flex-1 text-left pt-1 sm:pt-2">
+                        <h4 className="text-lg font-bold text-[#1c2e2c] mb-1">
+                          Initial Report Review
+                        </h4>
+                        <p className="text-[#1c2e2c]/70 text-[13px] leading-relaxed font-light">
+                          When you share your dental reports, X-rays, or clear pictures with us, our partner clinic specialists will review your case and provide preliminary feedback on your suitability for implant treatment.
+                        </p>
+                      </div>
+                    </div>
 
-                  {/* Step 4 */}
-                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">04</span>
-                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Implant Procedure</h4>
-                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
-                      You will get everything arranged from us; you just have to travel to the country you select, whether it's Singapore, Bali, or India. Our partner dental specialists will provide proper care and guidance for a healing face.
-                    </p>
-                  </div>
+                    {/* Step 2 */}
+                    <div className="flex gap-6 items-start relative group">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#e2ece9] text-[#084843] flex items-center justify-center font-bold text-lg shrink-0 shadow-sm z-10 border-4 border-white transition-transform duration-300 group-hover:scale-105">
+                        02
+                      </div>
+                      <div className="flex-1 text-left pt-1 sm:pt-2">
+                        <h4 className="text-lg font-bold text-[#1c2e2c] mb-1">
+                          Consultation & Suitability Confirmation Before Travel
+                        </h4>
+                        <p className="text-[#1c2e2c]/70 text-[13px] leading-relaxed font-light">
+                          Once you decide to continue your treatment journey with us, a consultation will be arranged with the treating specialist online for a detailed review of your case. Based on this, the specialist will confirm your suitability and prepare a treatment plan specifying expected stages, duration, and procedure before your travel.
+                        </p>
+                      </div>
+                    </div>
 
-                  {/* Step 5 */}
-                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">05</span>
-                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Healing & Crown Replacement</h4>
-                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
-                      The final step of a dental implant treatment is the healing and crown replacement. In this step, your implant becomes completely functional, and it appears like a natural tooth.
-                    </p>
-                  </div>
+                    {/* Step 3 */}
+                    <div className="flex gap-6 items-start relative group">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#e2ece9] text-[#084843] flex items-center justify-center font-bold text-lg shrink-0 shadow-sm z-10 border-4 border-white transition-transform duration-300 group-hover:scale-105">
+                        03
+                      </div>
+                      <div className="flex-1 text-left pt-1 sm:pt-2">
+                        <h4 className="text-lg font-bold text-[#1c2e2c] mb-1">
+                          Implant Placement
+                        </h4>
+                        <p className="text-[#1c2e2c]/70 text-[13px] leading-relaxed font-light">
+                          The titanium implant post is surgically placed by your treating specialist. The procedure itself is usually simple; however, time and approach may vary depending on your case.
+                        </p>
+                      </div>
+                    </div>
 
-                  {/* Step 6 */}
-                  <div className="bg-[#f4faf9] border border-[#e5ebe9] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                    <span className="text-brand-teal font-serif italic text-3xl font-normal block mb-2">06</span>
-                    <h4 className="text-base font-bold text-[#1c2e2c] mb-2">Follow Up</h4>
-                    <p className="text-[#556966] text-xs sm:text-sm leading-relaxed font-light">
-                      After the treatment, the healing of the implant is very important. You will get a natural finish, and if you face any problem, we will always be in touch and ready to help you.
-                    </p>
+                    {/* Step 4 */}
+                    <div className="flex gap-6 items-start relative group">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#e2ece9] text-[#084843] flex items-center justify-center font-bold text-lg shrink-0 shadow-sm z-10 border-4 border-white transition-transform duration-300 group-hover:scale-105">
+                        04
+                      </div>
+                      <div className="flex-1 text-left pt-1 sm:pt-2">
+                        <h4 className="text-lg font-bold text-[#1c2e2c] mb-1">
+                          Healing Period
+                        </h4>
+                        <p className="text-[#1c2e2c]/70 text-[13px] leading-relaxed font-light">
+                          After placement, the implant requires time to heal during which it naturally integrates with the jawbone. This process is known as osseointegration. This phase is generally spent at home and varies in time from person to person.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Step 5 */}
+                    <div className="flex gap-6 items-start relative group">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#e2ece9] text-[#084843] flex items-center justify-center font-bold text-lg shrink-0 shadow-sm z-10 border-4 border-white transition-transform duration-300 group-hover:scale-105">
+                        05
+                      </div>
+                      <div className="flex-1 text-left pt-1 sm:pt-2">
+                        <h4 className="text-lg font-bold text-[#1c2e2c] mb-1">
+                          Abutment & Crown Placement
+                        </h4>
+                        <p className="text-[#1c2e2c]/70 text-[13px] leading-relaxed font-light">
+                          Once it is healed, the abutment connector and custom-made crown will be fitted. At this stage, your implant is ready to function and look just like a natural tooth.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Step 6 */}
+                    <div className="flex gap-6 items-start relative group">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#e2ece9] text-[#084843] flex items-center justify-center font-bold text-lg shrink-0 shadow-sm z-10 border-4 border-white transition-transform duration-300 group-hover:scale-105">
+                        06
+                      </div>
+                      <div className="flex-1 text-left pt-1 sm:pt-2">
+                        <h4 className="text-lg font-bold text-[#1c2e2c] mb-1">
+                          Follow-Up & Aftercare Support
+                        </h4>
+                        <p className="text-[#1c2e2c]/70 text-[13px] leading-relaxed font-light">
+                          HPT will be available up to six months after your treatment to assist with communication and coordination with your treating clinic.
+                        </p>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
+
               </div>
             )}
           </div>
@@ -544,31 +634,26 @@ export default function DentalImplantsPage() {
 
           {/* Headline */}
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-white mb-6 leading-[1.15] max-w-3xl font-sans">
-            Get an Initial <br />
+            Discuss Your Dental Implant <br />
             <span className="font-serif italic font-normal text-white block mt-2">
-              Implant Assessment With Our Assistance
+              Treatment Options With Us
             </span>
           </h2>
           
           {/* Paragraph */}
-          <p className="text-base sm:text-lg text-white/95 leading-relaxed font-light mb-10 max-w-xl mx-auto">
-            Share all your available dental reports, scans, or any concerns related to your implant treatment to have a better understanding of possible treatment options along with their suitability.
+          <p className="text-base sm:text-lg text-white/95 leading-relaxed font-light mb-10 max-w-2xl mx-auto">
+            Do you have any questions in your mind about missing teeth, implants, or available treatment options? Start with having a simple discussion with us.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">
-            <a
-              href="#contact"
-              className="w-full sm:w-auto bg-white hover:bg-zinc-150 text-[#1c2e2c] font-semibold text-sm px-8 py-4 rounded-full transition-all duration-300 shadow-lg flex items-center justify-center gap-2 cursor-pointer"
-            >
-              Submit Your Case &rarr;
-            </a>
-            <a
-              href="#contact"
-              className="w-full sm:w-auto border border-white/40 hover:bg-white/10 text-white font-semibold text-sm px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
-            >
-              Contact Us &rarr;
-            </a>
-          </div>
+          <a
+            href="#contact"
+            className="bg-white hover:bg-zinc-100 text-[#1c2e2c] font-semibold text-sm px-8 py-4 rounded-full transition-all duration-300 shadow-lg flex items-center justify-center gap-2 cursor-pointer w-fit"
+          >
+            Start A Conversation
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
         </div>
       </section>
 
@@ -832,27 +917,73 @@ export default function DentalImplantsPage() {
                     />
                   </div>
 
-                  <div className="flex flex-col gap-1">
-                    <label htmlFor="service" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Select Treatment / Service</label>
+                  <div className="flex flex-col gap-1 custom-select-container relative">
+                    <label className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Select Treatment / Service</label>
                     <div className="relative">
-                      <select
-                        id="service"
-                        value={formData.service}
-                        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                        className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] focus:outline-none focus:border-brand-teal/40 transition-colors appearance-none cursor-pointer"
+                      <button
+                        type="button"
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] focus:outline-none focus:border-brand-teal/40 transition-colors flex justify-between items-center cursor-pointer text-left"
                       >
-                        <option value="implant">Dental Implants</option>
-                        <option value="bridge">Dental Bridges</option>
-                        <option value="veneer">Dental Veneers</option>
-                        <option value="crown">Dental Crowns</option>
-                        <option value="restoration">Full Mouth Restoration</option>
-                      </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#1c2e2c]/70">
-                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <span className="truncate">
+                          {formData.services.length > 0
+                            ? formData.services
+                                .map((s) => {
+                                  const opt = [
+                                    { value: "implant", label: "Dental Implants" },
+                                    { value: "bridge", label: "Dental Bridges" },
+                                    { value: "veneer", label: "Dental Veneers" },
+                                    { value: "crown", label: "Dental Crowns" },
+                                    { value: "restoration", label: "Full Mouth Restoration" },
+                                  ].find((o) => o.value === s);
+                                  return opt ? opt.label : s;
+                                })
+                                .join(", ")
+                            : "Select Treatment(s)"}
+                        </span>
+                        <svg className={`fill-current h-4 w-4 text-[#1c2e2c]/70 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                           <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                         </svg>
-                      </div>
+                      </button>
+
+                      {isDropdownOpen && (
+                        <div className="absolute top-full left-0 z-50 w-full mt-1.5 bg-white border border-[#e5ebe9] rounded-xl shadow-lg py-1.5 max-h-60 overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-150">
+                          {[
+                            { value: "implant", label: "Dental Implants" },
+                            { value: "bridge", label: "Dental Bridges" },
+                            { value: "veneer", label: "Dental Veneers" },
+                            { value: "crown", label: "Dental Crowns" },
+                            { value: "restoration", label: "Full Mouth Restoration" },
+                          ].map((option) => {
+                            const isChecked = formData.services.includes(option.value);
+                            return (
+                              <div
+                                key={option.value}
+                                onClick={() => {
+                                  const nextServices = isChecked
+                                    ? formData.services.filter((v) => v !== option.value)
+                                    : [...formData.services, option.value];
+                                  setFormData({ ...formData, services: nextServices });
+                                }}
+                                className="flex items-center gap-3 px-4 py-3 hover:bg-brand-mint/30 cursor-pointer text-sm text-[#1c2e2c] transition-colors"
+                              >
+                                <div className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-colors ${isChecked ? "bg-brand-teal border-brand-teal text-white" : "border-[#cbd5e1] bg-white"}`}>
+                                  {isChecked && (
+                                    <svg className="w-3.5 h-3.5 stroke-current stroke-[3] fill-none" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                  )}
+                                </div>
+                                <span className={isChecked ? "font-semibold text-brand-teal" : "font-normal"}>{option.label}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
+                    {formData.services.length === 0 && (
+                      <span className="text-[11px] text-red-500 mt-0.5">Please select at least one treatment.</span>
+                    )}
                   </div>
 
                   <div className="flex flex-col gap-1">
