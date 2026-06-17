@@ -228,29 +228,6 @@ export default function DentalImplantsPage() {
         </div>
       </section>
 
-      {/* 2. CTA-1: DISCUSS OPTIONS BANNER */}
-      <section className="w-full bg-[#f6faf9] py-20 lg:py-28 border-b border-brand-teal/5">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-6">
-            Discuss Your Dental Implant <br />
-            <span className="font-serif italic font-normal text-brand-teal block mt-2">
-              Treatment Options With Us
-            </span>
-          </h2>
-          <p className="text-base sm:text-lg text-brand-teal/70 leading-relaxed font-light mb-10 max-w-2xl mx-auto">
-            Do you have any questions in your mind about missing teeth, implants, or available treatment options? Start with having a simple discussion with us.
-          </p>
-          <a
-            href="#contact"
-            className="bg-brand-teal hover:bg-brand-teal-light text-white font-semibold text-sm px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 w-fit mx-auto cursor-pointer"
-          >
-            Start A Conversation
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        </div>
-      </section>
 
       {/* 2.5. DENTAL IMPLANTS STEPS VISUALIZATION SECTION */}
       <section className="w-full bg-white py-20 lg:py-28 border-b border-brand-teal/5">
@@ -506,25 +483,38 @@ export default function DentalImplantsPage() {
             )}
 
             {activeTab === "stages" && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start w-full">
                 
-                {/* Left Column - Headline + Tag + Button */}
-                <div className="lg:col-span-3 flex flex-col items-start text-left">
+                {/* Left Column - Headline + Image + Content + Button */}
+                <div className="lg:col-span-6 flex flex-col items-start text-left">
                   <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
                     Our Process
                   </div>
 
                   <h3 className="text-3xl sm:text-4xl lg:text-[38px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-8">
-                    Your Dental <br />
-                    Implant <br />
-                    Journey <br />
-                    <span className="font-serif italic font-normal text-brand-teal block mt-1">With HPT</span>
+                    Your Dental Implant Journey <span className="font-serif italic font-normal text-brand-teal">With HPT</span>
                   </h3>
+
+                  {/* Portrait Image Container */}
+                  <div className="w-full max-w-[340px] relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white mb-6">
+                    <Image
+                      src="/mindera_process.png"
+                      alt="Specialist explaining implant process"
+                      fill
+                      className="object-cover"
+                      sizes="(max-w-1024px) 100vw, 340px"
+                    />
+                  </div>
+
+                  {/* Caption Content */}
+                  <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed font-light mb-8 max-w-[450px]">
+                    Since every dental implant case is unique, the steps below are intended to give you a general overview of the treatment process.
+                  </p>
 
                   <a
                     href="#contact"
-                    className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit mb-10 lg:mb-0 cursor-pointer"
+                    className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit cursor-pointer"
                   >
                     Request Consultation
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -533,21 +523,8 @@ export default function DentalImplantsPage() {
                   </a>
                 </div>
 
-                {/* Middle Column - Portrait Image */}
-                <div className="lg:col-span-4 w-full">
-                  <div className="w-full relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white">
-                    <Image
-                      src="/mindera_process.png"
-                      alt="Specialist explaining implant process"
-                      fill
-                      className="object-cover"
-                      sizes="(max-w-1024px) 40vw, 30vw"
-                    />
-                  </div>
-                </div>
-
                 {/* Right Column - Steps timeline */}
-                <div className="lg:col-span-5 relative pl-4 sm:pl-8 w-full">
+                <div className="lg:col-span-6 relative pl-4 sm:pl-8 w-full">
                   
                   {/* vertical connecting line */}
                   <div className="absolute left-10 sm:left-14 top-8 bottom-8 w-[2px] bg-[#d1dcd9] pointer-events-none" />
@@ -1129,7 +1106,7 @@ export default function DentalImplantsPage() {
                 href="#contact"
                 className="bg-[#1c2e2c] hover:bg-[#283e3c] text-white font-semibold text-xs px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center justify-center gap-2 w-fit"
               >
-                Free Consultation &rarr;
+                Get a Preliminary Review &rarr;
               </a>
             </div>
 
