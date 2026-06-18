@@ -99,13 +99,13 @@ export default function DentalImplantsPage() {
       text: "My confidence was very low after I lost two teeth in a bike accident. They were clearly visible and affected my smile very much. At first I was broken due to this but with HPT company I got a perfect dental implant which looks completely natural. I didn't expect it to be this better thank you HPT company.",
       author: "Brandon John",
       title: "Bike Accident Patient",
-      avatar: "/mindera_testimonial_1.png"
+      avatar: "/mindera_therapist_1.png"
     },
     {
       text: "I don't get much pain during the surgery, but in the beginning, I feel very weak after it. Thanks to HPT company's coordinator who helped us to manage everything and choose the perfect place for this treatment. Now my good health is only because of them.",
       author: "Julia Tandra",
       title: "International Traveler",
-      avatar: "/mindera_testimonial_2.png"
+      avatar: "/mindera_therapist_2.png"
     }
   ];
 
@@ -471,7 +471,7 @@ export default function DentalImplantsPage() {
                 <div className="lg:col-span-5 w-full">
                   <div className="w-full relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-lg border border-white bg-white">
                     <Image
-                      src="/mindera_process.png"
+                      src="/implants_process.png"
                       alt="Why Implants process visual"
                       fill
                       className="object-cover"
@@ -499,7 +499,7 @@ export default function DentalImplantsPage() {
                   {/* Portrait Image Container */}
                   <div className="w-full max-w-[340px] relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white mb-6">
                     <Image
-                      src="/mindera_process.png"
+                      src="/implants_process.png"
                       alt="Specialist explaining implant process"
                       fill
                       className="object-cover"
@@ -756,12 +756,7 @@ export default function DentalImplantsPage() {
                     className="object-cover"
                     sizes="(max-w-768px) 100vw, 220px"
                   />
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/75 backdrop-blur-sm shadow-sm px-3.5 py-1.5 rounded-full flex items-center gap-1.5 text-[11px] text-[#1c2e2c] font-semibold hover:bg-white transition-colors cursor-pointer z-10 whitespace-nowrap">
-                    <svg className="w-3.5 h-3.5 fill-[#1c2e2c] stroke-none" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                    Play Video
-                  </div>
+
                 </div>
 
                 <div className="flex-1 flex flex-col justify-between pt-1">
@@ -792,12 +787,7 @@ export default function DentalImplantsPage() {
                     className="object-cover"
                     sizes="(max-w-768px) 100vw, 220px"
                   />
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/75 backdrop-blur-sm shadow-sm px-3.5 py-1.5 rounded-full flex items-center gap-1.5 text-[11px] text-[#1c2e2c] font-semibold hover:bg-white transition-colors cursor-pointer z-10 whitespace-nowrap">
-                    <svg className="w-3.5 h-3.5 fill-[#1c2e2c] stroke-none" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                    Play Video
-                  </div>
+
                 </div>
 
                 <div className="flex-1 flex flex-col justify-between pt-1">
@@ -892,7 +882,7 @@ export default function DentalImplantsPage() {
                 </div>
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm border border-brand-teal/5">
                   <Image
-                    src="/mindera_process.png"
+                    src="/implants_process.png"
                     alt="Process consultation"
                     fill
                     className="object-cover"

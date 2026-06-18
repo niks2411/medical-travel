@@ -187,8 +187,8 @@ export default function DentalServicesPage() {
         <div className="w-full lg:w-[45%] relative h-[500px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-full bg-brand-mint-dark overflow-hidden">
           {/* Fallback image shown during load */}
           <Image
-            src="/mindera_hero.png"
-            alt="Warm and welcoming Mindera client"
+            src="/dental_landing_hero.png"
+            alt="Warm and welcoming dental care client"
             fill
             priority
             className={`object-cover object-center transition-opacity duration-700 ${
@@ -904,13 +904,7 @@ export default function DentalServicesPage() {
                     className="object-cover"
                     sizes="(max-w-768px) 100vw, 220px"
                   />
-                  {/* Floating Play Video Badge */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/75 backdrop-blur-sm shadow-sm px-3.5 py-1.5 rounded-full flex items-center gap-1.5 text-[11px] text-[#1c2e2c] font-semibold hover:bg-white transition-colors cursor-pointer z-10 whitespace-nowrap">
-                    <svg className="w-3.5 h-3.5 fill-[#1c2e2c] stroke-none" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                    Play Video
-                  </div>
+
                 </div>
 
                 {/* Right Card: Content */}
@@ -951,13 +945,7 @@ export default function DentalServicesPage() {
                     className="object-cover"
                     sizes="(max-w-768px) 100vw, 220px"
                   />
-                  {/* Floating Play Video Badge */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/75 backdrop-blur-sm shadow-sm px-3.5 py-1.5 rounded-full flex items-center gap-1.5 text-[11px] text-[#1c2e2c] font-semibold hover:bg-white transition-colors cursor-pointer z-10 whitespace-nowrap">
-                    <svg className="w-3.5 h-3.5 fill-[#1c2e2c] stroke-none" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                    Play Video
-                  </div>
+
                 </div>
 
                 {/* Right Card: Content */}
