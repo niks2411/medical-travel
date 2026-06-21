@@ -157,7 +157,7 @@ export default function DentalVeneersPage() {
               Turn Your Imperfections Into a Beautiful Smile with Dental Veneers.
             </p>
             <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed mb-10 font-light">
-              Veneers are thin, custom-made caps that are covered to the front surface of your teeth to improve their appearance. Veneers are generally used in cosmetic dentistry to serve patients with a brighter smile. You may also hesitate to smile freely due to sharp edges and stains, or a gap between teeth which makes them look uneven. With dental veneers, you can improve your appearance, resulting in an overall attractive look.
+              Veneers are thin, custom-made caps that are covered to the front surface of your teeth to improve their appearance. Veneers are generally used in cosmetic dentistry to serve patients with a brighter smile.
             </p>
 
             {/* Hero Buttons */}
@@ -255,37 +255,17 @@ export default function DentalVeneersPage() {
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] mb-6 font-sans">
-                What Are <br />
+                What dental veneers <br />
                 <span className="font-serif italic font-normal text-brand-teal block mt-2">
-                  Dental Veneers
+                  can do ?
                 </span>
               </h2>
 
               <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed font-light mb-6">
-                In dental veneers, thin custom-made shells are used to improve your appearance by placing them perfectly on the front surface of your teeth. With this, you are ready to give a natural, good, and bright smile to the world.
+                You may also hesitate to smile freely due to sharp edges and stains, or a gap between teeth which makes them look uneven. With dental veneers, you can improve your appearance, resulting in an overall attractive look.
               </p>
 
-              <div className="border-t border-brand-teal/10 pt-6 mt-6">
-                <h4 className="text-sm font-bold text-[#1c2e2c] uppercase tracking-wider mb-4">Why Patients Consider Veneers Abroad</h4>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-brand-teal">✦</span>
-                    <span className="text-sm text-[#1c2e2c]/80 font-light">Cosmetic planning</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-brand-teal">✦</span>
-                    <span className="text-sm text-[#1c2e2c]/80 font-light">Smile design precision</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-brand-teal">✦</span>
-                    <span className="text-sm text-[#1c2e2c]/80 font-light">Modern techniques</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-brand-teal">✦</span>
-                    <span className="text-sm text-[#1c2e2c]/80 font-light">Cost efficiency</span>
-                  </div>
-                </div>
-              </div>
+
             </div>
 
             {/* Right Column: Square Image Space */}
@@ -336,7 +316,7 @@ export default function DentalVeneersPage() {
                   : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
               }`}
             >
-              Who May Need Veneers? (Eligibility)
+              Who May Need It? (Eligibility)
             </button>
             <button
               onMouseEnter={() => changeTab("why")}
@@ -347,7 +327,7 @@ export default function DentalVeneersPage() {
                   : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
               }`}
             >
-              Benefits of Veneers
+              Why Veneers?
             </button>
             <button
               onMouseEnter={() => changeTab("stages")}
@@ -358,7 +338,7 @@ export default function DentalVeneersPage() {
                   : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
               }`}
             >
-              Treatment Stages (Journey)
+              Treatment Stages
             </button>
           </div>
 
@@ -380,13 +360,8 @@ export default function DentalVeneersPage() {
                   {/* Card 1 */}
                   <div className="bg-[#f4faf9] border border-brand-teal/5 rounded-2xl p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div>
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="w-12 h-12 rounded-xl bg-brand-mint flex items-center justify-center shrink-0">
-                          <svg className="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
-                          </svg>
-                        </div>
-                        <span className="text-xl font-serif italic text-brand-teal/50">01</span>
+                      <div className="flex justify-between items-start mb-6 mt-2">
+                        <span className="text-2xl font-serif italic text-brand-teal/30">01</span>
                       </div>
                       <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Stains not improved by whitening</h4>
                       <p className="text-[#556966] text-sm leading-relaxed font-light mb-4">
@@ -402,13 +377,8 @@ export default function DentalVeneersPage() {
                   {/* Card 2 */}
                   <div className="bg-[#f4faf9] border border-brand-teal/5 rounded-2xl p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div>
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="w-12 h-12 rounded-xl bg-brand-mint flex items-center justify-center shrink-0">
-                          <svg className="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                          </svg>
-                        </div>
-                        <span className="text-xl font-serif italic text-brand-teal/50">02</span>
+                      <div className="flex justify-between items-start mb-6 mt-2">
+                        <span className="text-2xl font-serif italic text-brand-teal/30">02</span>
                       </div>
                       <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Chipped front teeth & minor cracks</h4>
                       <p className="text-[#556966] text-sm leading-relaxed font-light mb-4">
@@ -424,13 +394,8 @@ export default function DentalVeneersPage() {
                   {/* Card 3 */}
                   <div className="bg-[#f4faf9] border border-brand-teal/5 rounded-2xl p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div>
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="w-12 h-12 rounded-xl bg-brand-mint flex items-center justify-center shrink-0">
-                          <svg className="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z" />
-                          </svg>
-                        </div>
-                        <span className="text-xl font-serif italic text-brand-teal/50">03</span>
+                      <div className="flex justify-between items-start mb-6 mt-2">
+                        <span className="text-2xl font-serif italic text-brand-teal/30">03</span>
                       </div>
                       <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Minor Gaps between teeth</h4>
                       <p className="text-[#556966] text-sm leading-relaxed font-light mb-4">
@@ -446,13 +411,8 @@ export default function DentalVeneersPage() {
                   {/* Card 4 */}
                   <div className="bg-[#f4faf9] border border-brand-teal/5 rounded-2xl p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div>
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="w-12 h-12 rounded-xl bg-brand-mint flex items-center justify-center shrink-0">
-                          <svg className="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                        <span className="text-xl font-serif italic text-[#0f766e]/50">04</span>
+                      <div className="flex justify-between items-start mb-6 mt-2">
+                        <span className="text-2xl font-serif italic text-brand-teal/30">04</span>
                       </div>
                       <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Uneven front teeth appearance</h4>
                       <p className="text-[#556966] text-sm leading-relaxed font-light mb-4">
@@ -514,13 +474,13 @@ export default function DentalVeneersPage() {
             )}
 
             {activeTab === "stages" && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
                 
-                {/* Left Column - Headline + Image */}
+                {/* Left Column - Headline + Image + Content + Button */}
                 <div className="lg:col-span-6 flex flex-col items-start text-left">
                   <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-                    Our Process
+                    Treatment Process
                   </div>
 
                   <h3 className="text-3xl sm:text-4xl lg:text-[38px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-8">
@@ -528,7 +488,7 @@ export default function DentalVeneersPage() {
                   </h3>
 
                   {/* Portrait Image Container */}
-                  <div className="w-full max-w-[340px] relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white">
+                  <div className="w-full max-w-[340px] relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white mb-6">
                     <Image
                       src="/mindera_process.png"
                       alt="Specialist planning veneers treatment"
@@ -537,9 +497,24 @@ export default function DentalVeneersPage() {
                       sizes="(max-w-1024px) 100vw, 340px"
                     />
                   </div>
+
+                  {/* Caption Content */}
+                  <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed font-light mb-8 max-w-[450px]">
+                    Designing your ideal smile is a customized journey. The 3-step treatment sequence above outlines the general process we coordinate for you.
+                  </p>
+
+                  <a
+                    href="#book"
+                    className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit cursor-pointer"
+                  >
+                    Request Consultation
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
                 </div>
 
-                {/* Right Column - Steps timeline & CTAs */}
+                {/* Right Column - Steps timeline */}
                 <div className="lg:col-span-6 w-full flex flex-col items-start">
                   
                   {/* Timeline steps list */}
@@ -566,27 +541,7 @@ export default function DentalVeneersPage() {
                     </div>
                   </div>
 
-                  {/* Description & Button below steps (Aligned with the step content text) */}
-                  <div className="mt-8 pl-4 sm:pl-8 w-full">
-                    <div className="pl-[72px] sm:pl-[80px] text-left">
-                      <p className="text-sm sm:text-base text-[#1c2e2c]/75 leading-relaxed font-light mb-6 max-w-[450px]">
-                        Designing your ideal smile is a customized journey. The 3-step treatment sequence above outlines the general process we coordinate for you.
-                      </p>
-
-                      <a
-                        href="#book"
-                        className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit cursor-pointer"
-                      >
-                        Request Consultation
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-
                 </div>
-
 
               </div>
             )}
@@ -614,7 +569,7 @@ export default function DentalVeneersPage() {
             We partner with verified clinics and specialists internationally to ensure you receive a beautiful, natural front-tooth finish with complete care and coordinates.
           </p>
 
-          <div className="w-full max-w-6xl relative pb-12 md:pb-36">
+          <div className="w-full max-w-6xl relative">
             {/* Group Counseling Image */}
             <div className="w-full aspect-[16/9] relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-brand-teal/5">
               <Image
@@ -625,59 +580,6 @@ export default function DentalVeneersPage() {
                 sizes="(max-w-1200px) 100vw, 1000px"
               />
               <div className="absolute inset-0 bg-black/15 pointer-events-none" />
-            </div>
-
-            {/* Overlapping Cards Container */}
-            <div className="relative md:absolute md:left-6 md:right-6 md:bottom-0 md:translate-y-1/2 mt-8 md:mt-0 bg-[#f4faf9] border border-brand-teal/5 rounded-[2rem] p-4 sm:p-5 shadow-lg z-20">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-                {/* Card 1 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Proven <span className="text-brand-teal">Experience</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      We are linked with the most trusted dental hospitals and specialists in India, Bali, and Singapore, offering years of experience.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Global <span className="text-brand-teal">Quality</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      Get premium, natural-looking, and durable veneers using global-quality treatments without spending a huge amount.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Transparency & <span className="text-brand-teal">Customisation</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      Get custom treatments fitting your personality, with all costs explained clearly before travel and no hidden fees.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 4 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      International <span className="text-brand-teal">Patient Support</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      Coordinators remain in touch with you throughout the journey, from arrival until safe return home with recovery care.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -1020,6 +922,28 @@ export default function DentalVeneersPage() {
                           })}
                         </div>
                       )}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="timeframe" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">When are you considering treatment abroad?</label>
+                    <div className="relative">
+                      <select
+                        id="timeframe"
+                        value={formData.timeframe}
+                        onChange={(e) => setFormData({ ...formData, timeframe: e.target.value })}
+                        className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] focus:outline-none focus:border-brand-teal/40 transition-colors appearance-none cursor-pointer"
+                      >
+                        <option value="1_month">Within 1 Month</option>
+                        <option value="3_months">Within 3 Months</option>
+                        <option value="6_months">Within 6 Months</option>
+                        <option value="exploring">Exploring Options Only</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#1c2e2c]/70">
+                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
 

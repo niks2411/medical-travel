@@ -1004,6 +1004,28 @@ export default function InitialFertilityAssessmentPage() {
                   </div>
 
                   <div className="flex flex-col gap-1">
+                    <label htmlFor="timeframe" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">When are you considering treatment abroad?</label>
+                    <div className="relative">
+                      <select
+                        id="timeframe"
+                        value={formData.timeframe}
+                        onChange={(e) => setFormData({ ...formData, timeframe: e.target.value })}
+                        className="w-full bg-[#fafcfc] border border-[#e5ebe9] rounded-xl px-4 py-3.5 text-sm text-[#1c2e2c] focus:outline-none focus:border-brand-teal/40 transition-colors appearance-none cursor-pointer"
+                      >
+                        <option value="1_month">Within 1 Month</option>
+                        <option value="3_months">Within 3 Months</option>
+                        <option value="6_months">Within 6 Months</option>
+                        <option value="exploring">Exploring Options Only</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#1c2e2c]/70">
+                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-1">
                     <label htmlFor="message" className="text-xs font-bold text-[#1c2e2c] uppercase tracking-wide">Tell us about your fertility history / needs</label>
                     <textarea
                       id="message"
