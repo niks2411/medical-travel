@@ -145,7 +145,7 @@ export default function DentalBridgesPage() {
             {/* Tag */}
             <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-              Restorative Dentistry
+              Bridge Restoration
             </div>
 
             {/* Headline */}
@@ -161,7 +161,7 @@ export default function DentalBridgesPage() {
               Get An Attractive Smile & Enhanced Confidence With Advanced Dental Bridges.
             </p>
             <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed mb-10 font-light">
-              When you have any missing teeth, it not only affects your appearance, but it also creates a wide range of problems for you in conducting your daily tasks such as speaking, chewing, and overtime shifting of other teeth. With dental bridges, you can replace one or more missing teeth with the help of an artificial tooth that fits perfectly in natural teeth. A bridge is supported by nearby teeth or crowns. This solution helps to get perfect functioning of your teeth and restore your appearance as it was.
+              Dental bridges replace one or more missing teeth with an artificial tooth held in place by the natural teeth on either side. The bridge is supported by neighbouring teeth or crowns, keeping it stable and comfortable. This solution helps to get normal chewing and speech function while also improving the appearance of your smile.
             </p>
 
             {/* Hero Buttons */}
@@ -259,14 +259,14 @@ export default function DentalBridgesPage() {
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] mb-6 font-sans">
-                What Is A <br />
+                What dental bridge <br />
                 <span className="font-serif italic font-normal text-brand-teal block mt-2">
-                  Dental Bridge
+                  can do?
                 </span>
               </h2>
 
               <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed font-light mb-6">
-                A dental bridge replaces one or more missing teeth by bridging the gap. Using nearby teeth or implants for support, it places an artificial tooth custom-designed to match your natural smile.
+                A dental bridge is a way to replace one or more missing teeth without surgery. First, the dentist prepares the teeth on each side of the space for crowns. A custom-made bridge, with crowns on each end and an artificial tooth (or teeth) in the middle, is then cemented securely into place. This gives you your smile back, helps you chew and makes speaking easier.
               </p>
 
               <div className="border-t border-brand-teal/10 pt-6 mt-6">
@@ -456,7 +456,7 @@ export default function DentalBridgesPage() {
                         </div>
                         <span className="text-xl font-serif italic text-[#0f766e]/50">04</span>
                       </div>
-                      <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Changes in the Design of the Face</h4>
+                      <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Facial Shape & Muscle Support</h4>
                       <p className="text-[#556966] text-sm leading-relaxed font-light mb-4">
                         Over time, missing teeth can cause a sunken facial appearance. A bridge provides necessary support for facial muscles to help regain your close to natural shape.
                       </p>
@@ -516,13 +516,13 @@ export default function DentalBridgesPage() {
             )}
 
             {activeTab === "stages" && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
                 
-                {/* Left Column - Headline + Image */}
+                {/* Left Column - Headline + Image + Content + Button */}
                 <div className="lg:col-span-6 flex flex-col items-start text-left">
                   <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-                    Our Process
+                    Treatment Process
                   </div>
 
                   <h3 className="text-3xl sm:text-4xl lg:text-[38px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-8">
@@ -530,7 +530,7 @@ export default function DentalBridgesPage() {
                   </h3>
 
                   {/* Portrait Image Container */}
-                  <div className="w-full max-w-[340px] relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white">
+                  <div className="w-full max-w-[340px] relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white mb-6">
                     <Image
                       src="/mindera_consultation.png"
                       alt="Specialist planning bridge treatment"
@@ -539,9 +539,24 @@ export default function DentalBridgesPage() {
                       sizes="(max-w-1024px) 100vw, 340px"
                     />
                   </div>
+
+                  {/* Caption Content */}
+                  <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed font-light mb-8 max-w-[450px]">
+                    The 3-step treatment sequence above outlines the general process we coordinate for you. Note that there may be a need for more than one visit in some cases, depending on the type of crown used.
+                  </p>
+
+                  <a
+                    href="#book"
+                    className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit cursor-pointer"
+                  >
+                    Request Consultation
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
                 </div>
 
-                {/* Right Column - Steps timeline & CTAs */}
+                {/* Right Column - Steps timeline */}
                 <div className="lg:col-span-6 w-full flex flex-col items-start">
                   
                   {/* Timeline steps list */}
@@ -565,25 +580,6 @@ export default function DentalBridgesPage() {
                           </div>
                         </div>
                       ))}
-                    </div>
-                  </div>
-
-                  {/* Description & Button below steps (Aligned with the step content text) */}
-                  <div className="mt-8 pl-4 sm:pl-8 w-full">
-                    <div className="pl-[72px] sm:pl-[80px] text-left">
-                      <p className="text-sm sm:text-base text-[#1c2e2c]/75 leading-relaxed font-light mb-6 max-w-[450px]">
-                        Designing your ideal smile is a customized journey. The 3-step treatment sequence above outlines the general process we coordinate for you.
-                      </p>
-
-                      <a
-                        href="#book"
-                        className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit cursor-pointer"
-                      >
-                        Request Consultation
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </a>
                     </div>
                   </div>
 
@@ -615,7 +611,7 @@ export default function DentalBridgesPage() {
             Getting dental treatment abroad requires proper planning and perfection in work. Our connection with trusted dental clinics and specialists makes it all possible.
           </p>
 
-          <div className="w-full max-w-6xl relative pb-12 md:pb-36">
+          <div className="w-full max-w-6xl relative">
             {/* Group Counseling Image */}
             <div className="w-full aspect-[16/9] relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-brand-teal/5">
               <Image
@@ -626,47 +622,6 @@ export default function DentalBridgesPage() {
                 sizes="(max-w-1200px) 100vw, 1000px"
               />
               <div className="absolute inset-0 bg-black/15 pointer-events-none" />
-            </div>
-
-            {/* Overlapping Cards Container */}
-            <div className="relative md:absolute md:left-6 md:right-6 md:bottom-0 md:translate-y-1/2 mt-8 md:mt-0 bg-[#f4faf9] border border-brand-teal/5 rounded-[2rem] p-4 sm:p-5 shadow-lg z-20">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-                {/* Card 1 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Selected <span className="text-brand-teal">Treatment Partners</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      Get treatment from selected specialists with Hi-Tech dental facilities. High-quality materials make bridges durable and natural.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Planning & <span className="text-brand-teal">Assistance</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      Absolute transparency over pricing and custom treatment plans. We handle travel and accommodation arrangements for you.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Full-Time <span className="text-brand-teal">Stage Support</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      Relax knowing you will get continuous support and active coordination in your journey from initial consultation to final recovery.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -862,26 +817,15 @@ export default function DentalBridgesPage() {
                 </div>
               </div>
 
-              {/* Side-by-Side Images */}
-              <div className="grid grid-cols-2 gap-4 w-full">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm border border-brand-teal/5">
-                  <Image
-                    src="/mindera_consultation.png"
-                    alt="Consultation room"
-                    fill
-                    className="object-cover"
-                    sizes="(max-w-768px) 50vw, 250px"
-                  />
-                </div>
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm border border-brand-teal/5">
-                  <Image
-                    src="/mindera_consultation.png"
-                    alt="Process consultation"
-                    fill
-                    className="object-cover"
-                    sizes="(max-w-768px) 50vw, 250px"
-                  />
-                </div>
+              {/* Single Image */}
+              <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-sm border border-brand-teal/5">
+                <Image
+                  src="/mindera_consultation.png"
+                  alt="Consultation room"
+                  fill
+                  className="object-cover"
+                  sizes="(max-w-1024px) 100vw, 500px"
+                />
               </div>
             </div>
 

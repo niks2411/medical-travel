@@ -72,11 +72,11 @@ export default function FullMouthRestorationPage() {
     },
     {
       title: "Chewing & Speaking Comfort",
-      desc: "Significantly alleviate mouth pain and functional difficulties while eating, chewing, or speaking."
+      desc: "Makes everyday tasks more comfortable, reducing mouth pain and difficulty while eating, chewing, or speaking"
     },
     {
       title: "Facial muscle & Aesthetic Support",
-      desc: "Regain facial muscle support, helping restore the natural shape of your face and facial design after wear or accident."
+      desc: "Regain facial muscle support, helping restore the natural shape of your face that can be lost through tooth wear or tooth loss."
     },
     {
       title: "Long-Term Oral Stabilization",
@@ -98,7 +98,7 @@ export default function FullMouthRestorationPage() {
     {
       num: "03",
       title: "After Treatment Support",
-      desc: "After the completion of the treatment, we stay connected with our patients for further guidance and follow-up recommended by their treating specialists to ensure their successful recovery."
+      desc: "After the completion of the treatment, we stay connected with our patients for further guidance and follow-up recommended by their treating specialists to support your recovery journey."
     }
   ];
 
@@ -137,7 +137,7 @@ export default function FullMouthRestorationPage() {
             {/* Tag */}
             <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-              Restorative Dentistry
+              Complete Smile Restoration
             </div>
 
             {/* Headline */}
@@ -251,14 +251,14 @@ export default function FullMouthRestorationPage() {
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] mb-6 font-sans">
-                What is <br />
+                What full mouth restoration <br />
                 <span className="font-serif italic font-normal text-brand-teal block mt-2">
-                  Full Mouth Restoration?
+                  can do?
                 </span>
               </h2>
 
               <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed font-light mb-6">
-                Full mouth restoration is a comprehensive treatment approach when several dental issues need to be treated across the mouth, rather than fixing one issue at a time. This treatment may involve bridges, veneers, crowns, implants, or other kinds of procedures, which are dependent on the conditions of your teeth, bite, gums, and overall function. Specialists examine the entire mouth and plan the necessary procedure to serve the patient with utmost comfort, proper functioning, improvement, and long-term oral health.
+                A full mouth restoration allows you to address several dental issues all at once. It replaces damaged, missing or worn teeth, restoring your comfortable bite, clear speech and full smile.
               </p>
 
               <div className="border-t border-brand-teal/10 pt-6 mt-6">
@@ -426,9 +426,9 @@ export default function FullMouthRestorationPage() {
                         </div>
                         <span className="text-xl font-serif italic text-brand-teal/50">03</span>
                       </div>
-                      <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Diverse area complications</h4>
+                      <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Multiple Dental Problems Across the Mouth</h4>
                       <p className="text-[#556966] text-sm leading-relaxed font-light mb-4">
-                        Taken several dental treatments for diverse areas previously, but still experiencing several dental complications.
+                        Multiple dental problems at the same time (even after previous treatment) that require a coordinated, whole mouth approach.
                       </p>
                     </div>
                     <div className="flex gap-2 mt-auto">
@@ -450,7 +450,7 @@ export default function FullMouthRestorationPage() {
                       </div>
                       <h4 className="text-lg font-bold text-[#1c2e2c] mb-2">Sunken facial features or jaw wear</h4>
                       <p className="text-[#556966] text-sm leading-relaxed font-light mb-4">
-                        Losing height, tooth dimensions, or experiencing sunken facial muscles after injuries, wear, or bike accidents.
+                        Over time, wear, injury or tooth loss can lead to a loss of tooth height or changes in your jaw structure, which can affect your facial profile and bite.
                       </p>
                     </div>
                     <div className="flex gap-2 mt-auto">
@@ -470,7 +470,7 @@ export default function FullMouthRestorationPage() {
                     Benefits of Undergoing a Full Mouth Restoration
                   </h3>
                   <p className="text-brand-teal/70 text-base font-light leading-relaxed mb-8">
-                    Undergoing full mouth rehabilitation improves function, stabilizes chewing capabilities, and supports facial design.
+                    Undergoing full mouth rehabilitation improves your chewing function, reduces discomfort and helps restore the natural shape and look of your face.
                   </p>
 
                   <div className="relative pl-6 border-l-2 border-[#d1dcd9] flex flex-col gap-6">
@@ -508,13 +508,13 @@ export default function FullMouthRestorationPage() {
             )}
 
             {activeTab === "stages" && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
                 
-                {/* Left Column - Headline + Image */}
+                {/* Left Column - Headline + Image + Content + Button */}
                 <div className="lg:col-span-6 flex flex-col items-start text-left">
                   <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-                    Our Process
+                    Treatment Process
                   </div>
 
                   <h3 className="text-3xl sm:text-4xl lg:text-[38px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-8">
@@ -522,7 +522,7 @@ export default function FullMouthRestorationPage() {
                   </h3>
 
                   {/* Portrait Image Container */}
-                  <div className="w-full max-w-[340px] relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white">
+                  <div className="w-full max-w-[340px] relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white mb-6">
                     <Image
                       src="/mindera_consultation.png"
                       alt="Specialist planning restoration"
@@ -531,9 +531,24 @@ export default function FullMouthRestorationPage() {
                       sizes="(max-w-1024px) 100vw, 340px"
                     />
                   </div>
+
+                  {/* Caption Content */}
+                  <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed font-light mb-8 max-w-[450px]">
+                    The 3-step treatment sequence above outlines the general process we coordinate for you. Note that there may be a need for more than one visit in some cases, depending on the type of crown used.
+                  </p>
+
+                  <a
+                    href="#book"
+                    className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit cursor-pointer"
+                  >
+                    Request Consultation
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
                 </div>
 
-                {/* Right Column - Steps timeline & CTAs */}
+                {/* Right Column - Steps timeline */}
                 <div className="lg:col-span-6 w-full flex flex-col items-start">
                   
                   {/* Timeline steps list */}
@@ -557,25 +572,6 @@ export default function FullMouthRestorationPage() {
                           </div>
                         </div>
                       ))}
-                    </div>
-                  </div>
-
-                  {/* Description & Button below steps (Aligned with the step content text) */}
-                  <div className="mt-8 pl-4 sm:pl-8 w-full">
-                    <div className="pl-[72px] sm:pl-[80px] text-left">
-                      <p className="text-sm sm:text-base text-[#1c2e2c]/75 leading-relaxed font-light mb-6 max-w-[450px]">
-                        Designing your ideal smile is a customized journey. The 3-step treatment sequence above outlines the general process we coordinate for you.
-                      </p>
-
-                      <a
-                        href="#book"
-                        className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit cursor-pointer"
-                      >
-                        Request Consultation
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </a>
                     </div>
                   </div>
 
@@ -607,7 +603,7 @@ export default function FullMouthRestorationPage() {
             When there is an involvement of a wide range of procedures, it is very important to do proper planning for the entire process.
           </p>
 
-          <div className="w-full max-w-6xl relative pb-12 md:pb-36">
+          <div className="w-full max-w-6xl relative">
             {/* Group Counseling Image */}
             <div className="w-full aspect-[16/9] relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-brand-teal/5">
               <Image
@@ -618,47 +614,6 @@ export default function FullMouthRestorationPage() {
                 sizes="(max-w-1200px) 100vw, 1000px"
               />
               <div className="absolute inset-0 bg-black/15 pointer-events-none" />
-            </div>
-
-            {/* Overlapping Cards Container */}
-            <div className="relative md:absolute md:left-6 md:right-6 md:bottom-0 md:translate-y-1/2 mt-8 md:mt-0 bg-[#f4faf9] border border-brand-teal/5 rounded-[2rem] p-4 sm:p-5 shadow-lg z-20">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-                {/* Card 1 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Selected <span className="text-brand-teal">Partner Clinics</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      Sharing medical reports with selected partner clinics and associated specialists in countries like India, Bali, and Singapore.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Arranged <span className="text-brand-teal">Logistics</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      We manage logistics, travel coordination, and accommodation arrangements to lower unnecessary stress and coordinate appointments.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Continuous <span className="text-brand-teal">Active Support</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      Providing active support throughout consultation, treatment, and recovery to ensure you comfortably focus on healing.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -854,26 +809,15 @@ export default function FullMouthRestorationPage() {
                 </div>
               </div>
 
-              {/* Side-by-Side Images */}
-              <div className="grid grid-cols-2 gap-4 w-full">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm border border-brand-teal/5">
-                  <Image
-                    src="/mindera_consultation.png"
-                    alt="Consultation room"
-                    fill
-                    className="object-cover"
-                    sizes="(max-w-768px) 50vw, 250px"
-                  />
-                </div>
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm border border-brand-teal/5">
-                  <Image
-                    src="/mindera_consultation.png"
-                    alt="Process consultation"
-                    fill
-                    className="object-cover"
-                    sizes="(max-w-768px) 50vw, 250px"
-                  />
-                </div>
+              {/* Single Image */}
+              <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-sm border border-brand-teal/5">
+                <Image
+                  src="/mindera_consultation.png"
+                  alt="Consultation room"
+                  fill
+                  className="object-cover"
+                  sizes="(max-w-1024px) 100vw, 500px"
+                />
               </div>
             </div>
 

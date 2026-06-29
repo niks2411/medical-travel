@@ -153,7 +153,7 @@ export default function DentalCrownsPage() {
             {/* Tag */}
             <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-              Restorative Dentistry
+              Crown Restoration
             </div>
 
             {/* Headline */}
@@ -168,8 +168,8 @@ export default function DentalCrownsPage() {
             <p className="text-base sm:text-lg text-brand-teal/70 leading-relaxed mb-6 font-light">
               Get Healthy, Close To Natural & More Beautiful Teeth With Dental Crowns.
             </p>
-            <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed mb-10 font-light">
-              When your teeth have become damaged or weak, they can't function properly or give you a beautiful smile. You will also face similar problems in conducting your daily tasks, such as eating, if there are cracks in your teeth or if they have become worn down. If you don't take the correct action at the right time, these problems may also increase. For these, dental crowns, which are basically custom-made caps for teeth, can restore and protect the strength, shape, and appearance of your natural teeth. A crown is that which may assist in preserving your natural tooth rather than removing it.
+            <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed mb-10 pb-12 font-light">
+              Dental crowns, are custom-made caps for teeth that restore a weak, broken or worn-down tooth, protecting and preserving your natural tooth rather than removing it.
             </p>
 
             {/* Hero Buttons */}
@@ -258,7 +258,7 @@ export default function DentalCrownsPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Top Row: Content on left, Square Image space on right */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-12">
-            
+
             {/* Left Column: Content */}
             <div className="lg:col-span-7 flex flex-col justify-center text-left">
               <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
@@ -267,14 +267,14 @@ export default function DentalCrownsPage() {
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] mb-6 font-sans">
-                What Is A <br />
+                What dental crowns <br />
                 <span className="font-serif italic font-normal text-brand-teal block mt-2">
-                  Dental Crown
+                  can do?
                 </span>
               </h2>
 
               <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed font-light mb-6">
-                A dental crown is a custom-made cap placed perfectly on the front/top surface of a damaged or weak tooth to restore and protect its strength, shape, and appearance.
+                A dental crown can save a broken, decayed, or worn-down tooth rather than removing it entirely. For a secure and comfortable fit of the crown, a dentist will first reshape it then bond a new crown in place that restores the tooth strength, shape and natural appearance.
               </p>
 
               <div className="border-t border-brand-teal/10 pt-6 mt-6">
@@ -334,39 +334,36 @@ export default function DentalCrownsPage() {
       {/* 3. INTERACTIVE TABS SECTION */}
       <section id="tabs-section" className="w-full bg-[#f6faf9] py-20 lg:py-32 border-b border-brand-teal/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center">
-          
+
           {/* Tab Capsule Buttons */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12 bg-white/60 p-3 rounded-full border border-brand-teal/10 shadow-[0_8px_30px_rgba(8,72,67,0.03)]">
             <button
               onMouseEnter={() => changeTab("eligibility")}
               onClick={() => changeTab("eligibility")}
-              className={`px-8 md:px-11 py-4 md:py-[18px] rounded-full font-bold text-base md:text-lg transition-all duration-300 cursor-pointer ${
-                activeTab === "eligibility"
-                  ? "bg-brand-teal text-white shadow-[0_10px_25px_-5px_rgba(8,72,67,0.35)] scale-[1.05]"
-                  : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
-              }`}
+              className={`px-8 md:px-11 py-4 md:py-[18px] rounded-full font-bold text-base md:text-lg transition-all duration-300 cursor-pointer ${activeTab === "eligibility"
+                ? "bg-brand-teal text-white shadow-[0_10px_25px_-5px_rgba(8,72,67,0.35)] scale-[1.05]"
+                : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
+                }`}
             >
               Who May Need It? (Eligibility)
             </button>
             <button
               onMouseEnter={() => changeTab("benefits")}
               onClick={() => changeTab("benefits")}
-              className={`px-8 md:px-11 py-4 md:py-[18px] rounded-full font-bold text-base md:text-lg transition-all duration-300 cursor-pointer ${
-                activeTab === "benefits"
-                  ? "bg-brand-teal text-white shadow-[0_10px_25px_-5px_rgba(8,72,67,0.35)] scale-[1.05]"
-                  : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
-              }`}
+              className={`px-8 md:px-11 py-4 md:py-[18px] rounded-full font-bold text-base md:text-lg transition-all duration-300 cursor-pointer ${activeTab === "benefits"
+                ? "bg-brand-teal text-white shadow-[0_10px_25px_-5px_rgba(8,72,67,0.35)] scale-[1.05]"
+                : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
+                }`}
             >
               Why Crowns?
             </button>
             <button
               onMouseEnter={() => changeTab("stages")}
               onClick={() => changeTab("stages")}
-              className={`px-8 md:px-11 py-4 md:py-[18px] rounded-full font-bold text-base md:text-lg transition-all duration-300 cursor-pointer ${
-                activeTab === "stages"
-                  ? "bg-brand-teal text-white shadow-[0_10px_25px_-5px_rgba(8,72,67,0.35)] scale-[1.05]"
-                  : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
-              }`}
+              className={`px-8 md:px-11 py-4 md:py-[18px] rounded-full font-bold text-base md:text-lg transition-all duration-300 cursor-pointer ${activeTab === "stages"
+                ? "bg-brand-teal text-white shadow-[0_10px_25px_-5px_rgba(8,72,67,0.35)] scale-[1.05]"
+                : "text-brand-teal/80 hover:bg-brand-mint/50 hover:text-brand-teal font-semibold"
+                }`}
             >
               Treatment Stages
             </button>
@@ -384,7 +381,7 @@ export default function DentalCrownsPage() {
                     A dental crown is recommended if your tooth has been severely cracked or worn out, or needs structural support. Here are the primary conditions when patients require crowns.
                   </p>
                 </div>
-                
+
                 {/* 2x2 Grid of candidacy criteria */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                   {/* Card 1 */}
@@ -524,13 +521,13 @@ export default function DentalCrownsPage() {
             )}
 
             {activeTab === "stages" && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start w-full">
-                
-                {/* Left Column - Headline + Image */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
+
+                {/* Left Column - Headline + Image + Content + Button */}
                 <div className="lg:col-span-6 flex flex-col items-start text-left">
                   <div className="flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-                    Our Process
+                    Treatment Process
                   </div>
 
                   <h3 className="text-3xl sm:text-4xl lg:text-[38px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-8">
@@ -538,7 +535,7 @@ export default function DentalCrownsPage() {
                   </h3>
 
                   {/* Portrait Image Container */}
-                  <div className="w-full max-w-[340px] relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white">
+                  <div className="w-full max-w-[340px] relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white mb-6">
                     <Image
                       src="/crowns_process.png"
                       alt="Specialist planning crown treatment"
@@ -547,11 +544,26 @@ export default function DentalCrownsPage() {
                       sizes="(max-w-1024px) 100vw, 340px"
                     />
                   </div>
+
+                  {/* Caption Content */}
+                  <p className="text-base sm:text-lg text-[#1c2e2c]/75 leading-relaxed font-light mb-8 max-w-[450px]">
+                    The 3-step treatment sequence above outlines the general process we coordinate for you. Note that there may be a need for more than one visit in some cases, depending on the type of crown used.
+                  </p>
+
+                  <a
+                    href="#book"
+                    className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit cursor-pointer"
+                  >
+                    Request Consultation
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
                 </div>
 
-                {/* Right Column - Steps timeline & CTAs */}
+                {/* Right Column - Steps timeline */}
                 <div className="lg:col-span-6 w-full flex flex-col items-start">
-                  
+
                   {/* Timeline steps list */}
                   <div className="relative pl-4 sm:pl-8 w-full">
                     {/* vertical connecting line */}
@@ -576,25 +588,6 @@ export default function DentalCrownsPage() {
                     </div>
                   </div>
 
-                  {/* Description & Button below steps (Aligned with the step content text) */}
-                  <div className="mt-8 pl-4 sm:pl-8 w-full">
-                    <div className="pl-[72px] sm:pl-[80px] text-left">
-                      <p className="text-sm sm:text-base text-[#1c2e2c]/75 leading-relaxed font-light mb-4 max-w-[450px]">
-                        The 3-step treatment sequence above outlines the general process we coordinate for you. Note that there may be a need for more than one visit in some cases, depending on the type of crown used.
-                      </p>
-
-                      <a
-                        href="#book"
-                        className="bg-brand-teal hover:bg-brand-teal-light text-white text-[13px] font-bold px-6 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-2 w-fit cursor-pointer"
-                      >
-                        Request Consultation
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-
                 </div>
 
               </div>
@@ -606,7 +599,7 @@ export default function DentalCrownsPage() {
       {/* 4. WHY PARTNERS ARE PERFECT FOR DENTAL CROWN ABROAD */}
       <section id="why-choose-us" className="w-full bg-white py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center">
-          
+
           <div className="inline-flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
             Why Choose Us
@@ -623,7 +616,7 @@ export default function DentalCrownsPage() {
             We partner with selected clinics and experienced specialists internationally to ensure you receive transparency, structured coordination, and premium restorative care.
           </p>
 
-          <div className="w-full max-w-6xl relative pb-12 md:pb-36">
+          <div className="w-full max-w-6xl relative">
             {/* Group Counseling Image */}
             <div className="w-full aspect-[16/9] relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-brand-teal/5">
               <Image
@@ -635,59 +628,6 @@ export default function DentalCrownsPage() {
               />
               <div className="absolute inset-0 bg-black/15 pointer-events-none" />
             </div>
-
-            {/* Overlapping Cards Container */}
-            <div className="relative md:absolute md:left-6 md:right-6 md:bottom-0 md:translate-y-1/2 mt-8 md:mt-0 bg-[#f4faf9] border border-brand-teal/5 rounded-[2rem] p-4 sm:p-5 shadow-lg z-20">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-                {/* Card 1 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Specialist <span className="text-brand-teal">Consultation</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      Initial review and consultation with our trusted specialists on the basis of visible concerns or reports.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Selected <span className="text-brand-teal">Partners Only</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      We share your case files only with our selected, certified, and highly trusted dental treatment partners.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      Clarity & <span className="text-brand-teal">Transparency</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      Before travelling, you get full transparency on likely stages and material used, keeping expectations practical.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 4 */}
-                <div className="bg-white border border-[#e5ebe9] rounded-[1.25rem] p-5 sm:p-6 flex flex-col justify-between text-left">
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1c2e2c] mb-2.5 leading-snug">
-                      End-to-End <span className="text-brand-teal">Coordination</span>
-                    </h4>
-                    <p className="text-[#556966] text-[12px] sm:text-[12.5px] leading-relaxed font-light">
-                      We coordinate appointments and stay duration, providing support before, during, and after your trip.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -697,7 +637,7 @@ export default function DentalCrownsPage() {
         {/* Background Image / Video Container */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute inset-0 bg-[#084843]/90 pointer-events-none" />
-          
+
           <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden opacity-30">
             <video
               src="/Group%20Counseling%20Helping%20And%20People%20For%20Support%20-%20NXCR3WK.mp4"
@@ -724,7 +664,7 @@ export default function DentalCrownsPage() {
           <h2 className="text-3xl sm:text-4xl lg:text-[36px] font-bold tracking-tight text-white mb-6 leading-[1.25] max-w-3xl font-sans">
             Are You Experiencing Problems Due To A Cracked or Weak Tooth, or is it Already Treated?
           </h2>
-          
+
           {/* Paragraph */}
           <p className="text-base sm:text-lg text-white/90 leading-relaxed font-light mb-10 max-w-2xl mx-auto">
             Ask your dental specialists with our assistance whether a dental crown may help you in protecting and restoring your tooth.
@@ -746,7 +686,7 @@ export default function DentalCrownsPage() {
       <section id="testimonials" className="w-full bg-white py-20 lg:py-32 border-b border-brand-teal/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
+
             {/* Left column info panel */}
             <div className="lg:col-span-5 lg:sticky lg:top-28 text-left">
               <div className="inline-flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
@@ -780,7 +720,7 @@ export default function DentalCrownsPage() {
                     <Image src="/mindera_therapist_3.png" alt="Avatar" fill className="object-cover" sizes="36px" />
                   </div>
                 </div>
-                
+
                 <div className="text-[22px] font-bold text-[#1c2e2c] flex items-center leading-none">
                   780K<span className="text-[#56b0a4] font-light ml-0.5">+</span>
                   <span className="text-base font-normal text-[#1c2e2c]/85 ml-2">Customer</span>
@@ -803,7 +743,7 @@ export default function DentalCrownsPage() {
                     />
 
                   </div>
-                  
+
                   <div className="flex-1 flex flex-col justify-between pt-1">
                     <div>
                       <div className="flex text-[#0f766e] mb-3 text-sm">★★★★★</div>
@@ -832,7 +772,7 @@ export default function DentalCrownsPage() {
       <section id="book" className="w-full bg-[#f6faf9] py-20 lg:py-32 border-b border-brand-teal/5 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
+
             {/* Left Column - Text and Info */}
             <div className="lg:col-span-6 flex flex-col items-start text-left">
               {/* Tag */}
@@ -867,7 +807,7 @@ export default function DentalCrownsPage() {
                     <span className="text-base font-bold text-[#1c2e2c]">+1 (555) 123-4567</span>
                   </div>
                 </div>
-                
+
                 {/* Email */}
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#1c2e2c] text-white flex items-center justify-center shrink-0">
@@ -970,17 +910,17 @@ export default function DentalCrownsPage() {
                         <span className="truncate">
                           {formData.services.length > 0
                             ? formData.services
-                                .map((s) => {
-                                  const opt = [
-                                    { value: "implant", label: "Dental Implants" },
-                                    { value: "bridge", label: "Dental Bridges" },
-                                    { value: "veneer", label: "Dental Veneers" },
-                                    { value: "crown", label: "Dental Crowns" },
-                                    { value: "restoration", label: "Full Mouth Restoration" },
-                                  ].find((o) => o.value === s);
-                                  return opt ? opt.label : s;
-                                })
-                                .join(", ")
+                              .map((s) => {
+                                const opt = [
+                                  { value: "implant", label: "Dental Implants" },
+                                  { value: "bridge", label: "Dental Bridges" },
+                                  { value: "veneer", label: "Dental Veneers" },
+                                  { value: "crown", label: "Dental Crowns" },
+                                  { value: "restoration", label: "Full Mouth Restoration" },
+                                ].find((o) => o.value === s);
+                                return opt ? opt.label : s;
+                              })
+                              .join(", ")
                             : "Select Service(s)"}
                         </span>
                         <svg className={`fill-current h-4 w-4 text-[#1c2e2c]/70 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -1076,7 +1016,7 @@ export default function DentalCrownsPage() {
       <section id="faq" className="w-full bg-white py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
+
             <div className="lg:col-span-5 bg-[#e8f1ef] rounded-[2rem] p-6 sm:p-8 flex flex-col gap-6 text-left">
               <div className="relative w-full aspect-[1.2/1] rounded-2xl overflow-hidden shadow-sm">
                 <Image src="/mindera_support_group_clean.png" alt="Dental crowns support and FAQ information" fill className="object-cover" sizes="(max-w-768px) 100vw, 400px" />
@@ -1116,11 +1056,10 @@ export default function DentalCrownsPage() {
                   return (
                     <div
                       key={idx}
-                      className={`rounded-2xl transition-all duration-300 ${
-                        isActive
-                          ? "bg-brand-teal text-white p-6 shadow-md border-none"
-                          : "bg-[#fafcfc] border border-[#e5ebe9] text-[#1c2e2c] p-6 hover:border-brand-teal hover:text-brand-teal cursor-pointer"
-                      }`}
+                      className={`rounded-2xl transition-all duration-300 ${isActive
+                        ? "bg-brand-teal text-white p-6 shadow-md border-none"
+                        : "bg-[#fafcfc] border border-[#e5ebe9] text-[#1c2e2c] p-6 hover:border-brand-teal hover:text-brand-teal cursor-pointer"
+                        }`}
                       onClick={() => setActiveFaq(idx)}
                     >
                       <div className="flex items-center justify-between gap-4 select-none">
