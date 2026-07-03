@@ -549,41 +549,6 @@ export default function DentalVeneersPage() {
         </div>
       </section>
 
-      {/* 4. WHY PARTNERS ARE PERFECT FOR DENTAL VENEERS ABROAD */}
-      <section id="why-choose-us" className="w-full bg-white py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center">
-          
-          <div className="inline-flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-            Why Choose Us
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans text-center">
-            What Makes HPT Company Perfect <br />
-            <span className="font-serif italic font-normal text-brand-teal block mt-2">
-              For Dental Veneers Abroad?
-            </span>
-          </h2>
-
-          <p className="text-base sm:text-lg text-brand-teal/70 leading-relaxed font-light mt-6 mb-16 text-center max-w-3xl">
-            We partner with verified clinics and specialists internationally to ensure you receive a beautiful, natural front-tooth finish with complete care and coordinates.
-          </p>
-
-          <div className="w-full max-w-6xl relative">
-            {/* Group Counseling Image */}
-            <div className="w-full aspect-[16/9] relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-brand-teal/5">
-              <Image
-                src="/mindera_support_group_clean.png"
-                alt="Support group counseling session"
-                fill
-                className="object-cover"
-                sizes="(max-w-1200px) 100vw, 1000px"
-              />
-              <div className="absolute inset-0 bg-black/15 pointer-events-none" />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 5. CALL TO ACTION BANNER (CTA 1) */}
       <section className="w-full text-white py-24 sm:py-32 relative overflow-hidden flex items-center justify-center min-h-[500px]">

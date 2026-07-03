@@ -66,38 +66,27 @@ export default function Home() {
           
           <div className="my-auto py-8 lg:py-0 max-w-2xl">
             {/* Tag */}
-            <div className="inline-flex items-center gap-2.5 bg-brand-mint/30 border border-brand-teal/5 px-4 py-1.5 rounded-full text-brand-teal text-[11px] font-bold tracking-[0.2em] uppercase mb-8 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
+            <div className="inline-flex items-center gap-2 bg-[#f0f7f6] border border-brand-teal/10 px-4 py-1.5 rounded-full text-brand-teal text-[11px] font-bold tracking-[0.2em] uppercase mb-8 shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
               Global Medical Travel Coordinator
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[45px] xl:text-[50px] font-bold tracking-tight text-[#1c2e2c] leading-[1.12] font-sans mb-8">
+            <h1 className="text-3xl sm:text-4xl lg:text-[45px] xl:text-[50px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans mb-8">
               When Treatment Delays, <br />
               Costs, Or Limited Options <br />
-              <span className="font-serif italic font-normal text-brand-teal block mt-3 relative w-fit">
+              <span className="font-serif italic font-normal text-brand-teal block mt-3">
                 Push Patients to Explore Further
-                <span className="absolute left-0 bottom-1 w-full h-[3px] bg-brand-mint/60 -z-10 rounded-full"></span>
               </span>
             </h1>
 
             {/* Paragraphs */}
-            <div className="space-y-6 text-base sm:text-lg text-brand-teal/70 leading-relaxed mb-10 max-w-xl font-light">
+            <div className="text-base sm:text-[17px] text-[#425451] leading-relaxed mb-10 max-w-xl font-light space-y-6">
               <p>
-                Exploring treatment abroad often starts with questions around options, timing, and planning. 
+                Exploring treatment abroad often starts with questions around suitability, timing, and planning. Health Plus Travel supports patients by helping them navigate verified international clinics, clear treatment options, and practical travel logistics before decisions are made.
               </p>
-              
-              <div className="border-l-2 border-brand-teal/20 pl-4 py-1">
-                <p className="font-semibold text-brand-teal text-xs tracking-wider uppercase mb-1">
-                  Medical Travel Support Designed Around Careful Planning
-                </p>
-                <p className="text-sm sm:text-base text-[#1c2e2c]/80">
-                  HPT supports patients who are exploring treatment abroad by helping them understand suitable options, selected clinics, and practical travel arrangements before treatment decisions are made. 
-                </p>
-              </div>
-
-              <p className="text-xs sm:text-sm">
-                Each case is approached carefully, with attention to treatment requirements, communication, and coordination at every stage of the journey.
+              <p>
+                Each case is approached with dedicated care, ensuring professional coordination, transparent details, and continuous support at every stage of the journey.
               </p>
             </div>
 
@@ -105,7 +94,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <a
                 href="#book"
-                className="bg-brand-teal hover:bg-brand-teal-light text-white font-semibold text-sm px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-[0_8px_25px_rgba(8,72,67,0.25)] flex items-center justify-center gap-2 group w-fit"
+                className="bg-brand-teal hover:bg-brand-teal-light text-white font-semibold text-sm px-8 py-4 rounded-full transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center gap-2 group w-fit"
               >
                 Discuss Your Treatment Options
                 <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -203,7 +192,7 @@ export default function Home() {
 
             {/* Right Column: Interactive Complexity Dashboard Panel */}
             <div className="lg:col-span-6 w-full">
-              <div className="bg-white border border-[#e5ebe9] p-8 sm:p-10 rounded-[2.5rem] shadow-[0_15px_40px_rgba(8,72,67,0.02)] flex flex-col gap-8">
+              <div className="bg-white border border-[#e5ebe9] p-8 sm:p-10 rounded-[2.5rem] shadow-xs flex flex-col gap-8">
                 <div>
                   <h4 className="font-bold text-lg text-[#1c2e2c] mb-2 leading-snug">
                     Treatment Abroad Requires More Than Choosing A Clinic
@@ -213,38 +202,41 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* Dashboard-Style Untangling Visual */}
-                <div className="w-full bg-[#1c2e2c] rounded-2xl p-6 border border-brand-teal/10 flex flex-col items-center justify-center relative overflow-hidden h-[180px]">
-                  <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(167,215,208,0.15)_0%,transparent_70%)]"></div>
-                  
-                  {/* Premium Dashboard visual SVG */}
-                  <svg className="w-11/12 h-16 relative z-10" viewBox="0 0 320 60" fill="none">
-                    {/* messy curves on left */}
-                    <path d="M10 30 Q 30 10, 45 40 T 80 20 T 115 30 T 145 25" stroke="rgba(167,215,208,0.25)" strokeWidth="1.5" strokeDasharray="3 3" />
-                    <path d="M10 30 Q 20 45, 50 15 T 90 35 T 130 15 T 145 25" stroke="rgba(86,176,164,0.3)" strokeWidth="1.5" />
+                {/* Simplified Professional Workflow Diagram (Native HTML/SVG for Perfect Clarity) */}
+                <div className="w-full bg-[#fcfdfe] rounded-2xl p-6 border border-[#e5ebe9] flex flex-col items-center justify-center h-[180px]">
+                  <div className="flex items-center justify-between w-full max-w-[390px] relative px-4">
+                    {/* Connecting line */}
+                    <div className="absolute left-8 right-8 top-6 h-[1.5px] bg-[#cbdcd9] -z-0"></div>
                     
-                    {/* Transformation node in center */}
-                    <circle cx="160" cy="25" r="14" fill="rgba(86,176,164,0.1)" stroke="rgba(86,176,164,0.4)" strokeWidth="1" />
-                    <circle cx="160" cy="25" r="8" fill="#56b0a4" className="animate-pulse" />
-                    <path d="M145 25 L 152 25" stroke="#56b0a4" strokeWidth="1.5" />
-                    <path d="M168 25 L 180 25" stroke="#56b0a4" strokeWidth="1.5" />
-                    
-                    {/* clean linear steps on right */}
-                    <path d="M180 25 L 310 25" stroke="#56b0a4" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="210" cy="25" r="4.5" fill="#56b0a4" stroke="#1c2e2c" strokeWidth="1.5" />
-                    <circle cx="260" cy="25" r="4.5" fill="#56b0a4" stroke="#1c2e2c" strokeWidth="1.5" />
-                    <circle cx="310" cy="25" r="4.5" fill="#56b0a4" stroke="#1c2e2c" strokeWidth="1.5" />
-                    
-                    {/* Floating messy nodes */}
-                    <circle cx="25" cy="15" r="3" fill="#a7d7d0" opacity="0.6" />
-                    <circle cx="65" cy="45" r="3" fill="#a7d7d0" opacity="0.4" />
-                    <circle cx="105" cy="15" r="3.5" fill="#a7d7d0" opacity="0.5" />
-                  </svg>
+                    {/* Node 1 */}
+                    <div className="flex flex-col items-center gap-3.5 z-10 relative">
+                      <div className="w-12 h-12 rounded-full bg-[#eef6f5] border border-brand-teal text-brand-teal flex items-center justify-center shadow-xs">
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      </div>
+                      <span className="text-[10px] font-bold tracking-wider text-brand-teal uppercase text-center">1. Case Review</span>
+                    </div>
 
-                  <div className="flex justify-between w-full px-1 mt-4 text-[9px] uppercase tracking-widest font-semibold text-white/50 relative z-10">
-                    <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-red-400"></span> Fragmented Variables</span>
-                    <span className="text-[#56b0a4] flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-[#56b0a4]"></span> Unified HPT Pathway</span>
+                    {/* Node 2 */}
+                    <div className="flex flex-col items-center gap-3.5 z-10 relative">
+                      <div className="w-12 h-12 rounded-full bg-[#eef6f5] border border-brand-teal text-brand-teal flex items-center justify-center shadow-xs">
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                        </svg>
+                      </div>
+                      <span className="text-[10px] font-bold tracking-wider text-brand-teal uppercase text-center">2. Planned Journey</span>
+                    </div>
+
+                    {/* Node 3 */}
+                    <div className="flex flex-col items-center gap-3.5 z-10 relative">
+                      <div className="w-12 h-12 rounded-full bg-white border border-slate-300 text-slate-400 flex items-center justify-center shadow-xs">
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      </div>
+                      <span className="text-[10px] font-bold tracking-wider text-slate-400 uppercase text-center">3. Recovery Support</span>
+                    </div>
                   </div>
                 </div>
 
@@ -252,7 +244,7 @@ export default function Home() {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   
                   {/* Reports */}
-                  <div className="bg-[#fafdfc] border border-brand-teal/5 p-4 rounded-2xl text-center flex flex-col items-center group hover:bg-white hover:shadow-sm transition-all duration-300">
+                  <div className="bg-[#fafdfc] border border-brand-teal/10 p-4 rounded-2xl text-center flex flex-col items-center group hover:bg-white hover:shadow-xs transition-all duration-300">
                     <svg className="w-6 h-6 text-brand-teal mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
@@ -260,7 +252,7 @@ export default function Home() {
                   </div>
 
                   {/* Clinics */}
-                  <div className="bg-[#fafdfc] border border-brand-teal/5 p-4 rounded-2xl text-center flex flex-col items-center group hover:bg-white hover:shadow-sm transition-all duration-300">
+                  <div className="bg-[#fafdfc] border border-brand-teal/10 p-4 rounded-2xl text-center flex flex-col items-center group hover:bg-white hover:shadow-xs transition-all duration-300">
                     <svg className="w-6 h-6 text-brand-teal mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
@@ -268,7 +260,7 @@ export default function Home() {
                   </div>
 
                   {/* Timing */}
-                  <div className="bg-[#fafdfc] border border-brand-teal/5 p-4 rounded-2xl text-center flex flex-col items-center group hover:bg-white hover:shadow-sm transition-all duration-300">
+                  <div className="bg-[#fafdfc] border border-brand-teal/10 p-4 rounded-2xl text-center flex flex-col items-center group hover:bg-white hover:shadow-xs transition-all duration-300">
                     <svg className="w-6 h-6 text-brand-teal mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
@@ -276,7 +268,7 @@ export default function Home() {
                   </div>
 
                   {/* Travel */}
-                  <div className="bg-[#fafdfc] border border-brand-teal/5 p-4 rounded-2xl text-center flex flex-col items-center group hover:bg-white hover:shadow-sm transition-all duration-300">
+                  <div className="bg-[#fafdfc] border border-brand-teal/10 p-4 rounded-2xl text-center flex flex-col items-center group hover:bg-white hover:shadow-xs transition-all duration-300">
                     <svg className="w-6 h-6 text-brand-teal mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>
@@ -307,101 +299,142 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             {/* Card 1 */}
-            <div className="bg-[#fafdfc] hover:bg-[#f6faf9] p-8 rounded-[2rem] border border-brand-teal/5 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(8,72,67,0.04)] hover:-translate-y-1 transition-all duration-500 group relative">
-              <div className="absolute top-0 left-0 w-full h-[3px] bg-brand-teal rounded-t-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="bg-[#fafdfc] hover:bg-white p-8 rounded-[2rem] border border-[#e5ebe9] flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-sm">01</div>
+                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-xs">01</div>
                 <h3 className="text-lg font-bold text-[#1c2e2c] mb-3 leading-snug">Treatment Coordination Before Travel</h3>
                 <p className="text-xs text-[#1c2e2c]/70 font-light leading-relaxed mb-6">
                   Organising initial case details and files, preparing documentation for review by selected clinics before departure.
                 </p>
-                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-brand-teal/10 pt-5">
+                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-[#e5ebe9] pt-5">
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Consultation coordination
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Consultation coordination</span>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Medical reports & appointments
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Medical reports & appointments</span>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Treatment planning support
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Treatment planning support</span>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Flight booking assistance
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Flight booking assistance</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-[#fafdfc] hover:bg-[#f6faf9] p-8 rounded-[2rem] border border-brand-teal/5 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(8,72,67,0.04)] hover:-translate-y-1 transition-all duration-500 group relative">
-              <div className="absolute top-0 left-0 w-full h-[3px] bg-brand-teal rounded-t-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="bg-[#fafdfc] hover:bg-white p-8 rounded-[2rem] border border-[#e5ebe9] flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-sm">02</div>
+                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-xs">02</div>
                 <h3 className="text-lg font-bold text-[#1c2e2c] mb-3 leading-snug">During Travel and Stay Support</h3>
                 <p className="text-xs text-[#1c2e2c]/70 font-light leading-relaxed mb-6">
                   Supporting communication, stay bookings, and medical appointments scheduling with selected international clinics.
                 </p>
-                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-brand-teal/10 pt-5">
+                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-[#e5ebe9] pt-5">
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Accommodation assistance
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Accommodation assistance</span>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Airport pickup & transfers
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Airport pickup & transfers</span>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Local transport coordination
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Local transport coordination</span>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Translator & communication support
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Translator support</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-[#fafdfc] hover:bg-[#f6faf9] p-8 rounded-[2rem] border border-brand-teal/5 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(8,72,67,0.04)] hover:-translate-y-1 transition-all duration-500 group relative">
-              <div className="absolute top-0 left-0 w-full h-[3px] bg-brand-teal rounded-t-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="bg-[#fafdfc] hover:bg-white p-8 rounded-[2rem] border border-[#e5ebe9] flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-sm">03</div>
+                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-xs">03</div>
                 <h3 className="text-lg font-bold text-[#1c2e2c] mb-3 leading-snug">Coordination During Treatment</h3>
                 <p className="text-xs text-[#1c2e2c]/70 font-light leading-relaxed mb-6">
                   Assisting with clinical session timings, on-ground accommodation needs, and immediate scheduling adjustments.
                 </p>
-                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-brand-teal/10 pt-5">
+                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-[#e5ebe9] pt-5">
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Clinic & hospital coordination
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Clinic & hospital coordination</span>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Daily schedule support
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Daily schedule support</span>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Companion travel assistance
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Companion travel assistance</span>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Recovery follow-up planning
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Recovery follow-up planning</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* Card 4 */}
-            <div className="bg-[#fafdfc] hover:bg-[#f6faf9] p-8 rounded-[2rem] border border-brand-teal/5 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(8,72,67,0.04)] hover:-translate-y-1 transition-all duration-500 group relative">
-              <div className="absolute top-0 left-0 w-full h-[3px] bg-brand-teal rounded-t-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="bg-[#fafdfc] hover:bg-white p-8 rounded-[2rem] border border-[#e5ebe9] flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-sm">04</div>
+                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-xs">04</div>
                 <h3 className="text-lg font-bold text-[#1c2e2c] mb-3 leading-snug">Post-Treatment Follow-up Support</h3>
                 <p className="text-xs text-[#1c2e2c]/70 font-light leading-relaxed mb-6">
                   Coordinating recovery clinical files, follow-up scheduling, and ongoing communication with clinical specialists.
                 </p>
-                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-brand-teal/10 pt-5 mb-8">
+                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-[#e5ebe9] pt-5 mb-8">
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Follow-up review channels
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Follow-up review channels</span>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Report translation & shipping
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Report translation & shipping</span>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span> Ongoing clinic communication
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Ongoing clinic communication</span>
                   </li>
                 </ul>
               </div>
@@ -438,15 +471,15 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Dental Care */}
-            <div className="group bg-white rounded-[2rem] overflow-hidden border border-[#e5ebe9] flex flex-col justify-between h-full shadow-[0_10px_35px_rgba(8,72,67,0.01)] hover:shadow-md transition-all duration-300">
+            <div className="group bg-white rounded-3xl overflow-hidden border border-[#e5ebe9] flex flex-col justify-between h-full hover:shadow-md transition-all duration-300">
               <div>
-                <div className="relative h-[240px] w-full overflow-hidden">
-                  <Image src="/services_dental.png" alt="Dental Care Services" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-[#084843]/5 group-hover:bg-[#084843]/0 transition-colors pointer-events-none" />
+                <div className="relative h-[240px] w-full overflow-hidden bg-[#fafdfc]">
+                  <Image src="/services_dental.png" alt="Dental Care Services" fill className="object-cover group-hover:scale-102 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-black/5 group-hover:opacity-0 transition-opacity pointer-events-none" />
                 </div>
                 <div className="p-8">
                   <h3 className="text-xl font-bold text-[#1c2e2c] mb-3">Dental Care</h3>
-                  <p className="text-xs sm:text-sm text-brand-teal/75 font-light leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm text-[#556966] font-light leading-relaxed">
                     Support for implants, crowns, veneers, bridges, and full-mouth restoration through accredited clinical networks.
                   </p>
                 </div>
@@ -454,23 +487,23 @@ export default function Home() {
               <div className="p-8 pt-0">
                 <Link
                   href="/services/dental"
-                  className="w-full bg-[#fafdfc] hover:bg-brand-teal hover:text-white border border-brand-teal/15 text-brand-teal font-semibold text-xs py-3.5 px-6 rounded-full flex items-center justify-center gap-2 transition-all duration-300 uppercase tracking-wider"
+                  className="w-full bg-[#fafdfc] hover:bg-brand-teal hover:text-white border border-brand-teal/20 text-brand-teal font-bold text-[11px] py-3.5 px-6 rounded-full flex items-center justify-center gap-2 transition-all duration-300 uppercase tracking-wider"
                 >
-                  Click to View Dental Services
+                  View Dental Services
                 </Link>
               </div>
             </div>
 
             {/* Fertility Treatments */}
-            <div className="group bg-white rounded-[2rem] overflow-hidden border border-[#e5ebe9] flex flex-col justify-between h-full shadow-[0_10px_35px_rgba(8,72,67,0.01)] hover:shadow-md transition-all duration-300">
+            <div className="group bg-white rounded-3xl overflow-hidden border border-[#e5ebe9] flex flex-col justify-between h-full hover:shadow-md transition-all duration-300">
               <div>
-                <div className="relative h-[240px] w-full overflow-hidden">
-                  <Image src="/services_fertility.png" alt="Fertility Treatments" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-[#084843]/5 group-hover:bg-[#084843]/0 transition-colors pointer-events-none" />
+                <div className="relative h-[240px] w-full overflow-hidden bg-[#fafdfc]">
+                  <Image src="/services_fertility.png" alt="Fertility Treatments" fill className="object-cover group-hover:scale-102 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-black/5 group-hover:opacity-0 transition-opacity pointer-events-none" />
                 </div>
                 <div className="p-8">
                   <h3 className="text-xl font-bold text-[#1c2e2c] mb-3">Fertility Treatments</h3>
-                  <p className="text-xs sm:text-sm text-brand-teal/75 font-light leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm text-[#556966] font-light leading-relaxed">
                     Structured support for IVF-based fertility treatments and related specialist diagnostic care.
                   </p>
                 </div>
@@ -478,23 +511,23 @@ export default function Home() {
               <div className="p-8 pt-0">
                 <Link
                   href="/services/fertility-ivf"
-                  className="w-full bg-[#fafdfc] hover:bg-brand-teal hover:text-white border border-brand-teal/15 text-brand-teal font-semibold text-xs py-3.5 px-6 rounded-full flex items-center justify-center gap-2 transition-all duration-300 uppercase tracking-wider"
+                  className="w-full bg-[#fafdfc] hover:bg-brand-teal hover:text-white border border-brand-teal/20 text-brand-teal font-bold text-[11px] py-3.5 px-6 rounded-full flex items-center justify-center gap-2 transition-all duration-300 uppercase tracking-wider"
                 >
-                  Click to View Fertility Services
+                  View Fertility Services
                 </Link>
               </div>
             </div>
 
             {/* Eye Treatments */}
-            <div className="group bg-white rounded-[2rem] overflow-hidden border border-[#e5ebe9] flex flex-col justify-between h-full shadow-[0_10px_35px_rgba(8,72,67,0.01)] hover:shadow-md transition-all duration-300">
+            <div className="group bg-white rounded-3xl overflow-hidden border border-[#e5ebe9] flex flex-col justify-between h-full hover:shadow-md transition-all duration-300">
               <div>
-                <div className="relative h-[240px] w-full overflow-hidden">
-                  <Image src="/services_eyevision.png" alt="Eye Treatments" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-[#084843]/5 group-hover:bg-[#084843]/0 transition-colors pointer-events-none" />
+                <div className="relative h-[240px] w-full overflow-hidden bg-[#fafdfc]">
+                  <Image src="/services_eyevision.png" alt="Eye Treatments" fill className="object-cover group-hover:scale-102 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-black/5 group-hover:opacity-0 transition-opacity pointer-events-none" />
                 </div>
                 <div className="p-8">
                   <h3 className="text-xl font-bold text-[#1c2e2c] mb-3">Eye Treatments</h3>
-                  <p className="text-xs sm:text-sm text-brand-teal/75 font-light leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm text-[#556966] font-light leading-relaxed">
                     Support for refractive procedures (LASIK/PRK) and cataract treatment through selected centers.
                   </p>
                 </div>
@@ -502,9 +535,9 @@ export default function Home() {
               <div className="p-8 pt-0">
                 <Link
                   href="/services/eye-vision"
-                  className="w-full bg-[#fafdfc] hover:bg-brand-teal hover:text-white border border-brand-teal/15 text-brand-teal font-semibold text-xs py-3.5 px-6 rounded-full flex items-center justify-center gap-2 transition-all duration-300 uppercase tracking-wider"
+                  className="w-full bg-[#fafdfc] hover:bg-brand-teal hover:text-white border border-brand-teal/20 text-brand-teal font-bold text-[11px] py-3.5 px-6 rounded-full flex items-center justify-center gap-2 transition-all duration-300 uppercase tracking-wider"
                 >
-                  Click to View Eye Services
+                  View Eye Services
                 </Link>
               </div>
             </div>
@@ -530,40 +563,40 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
             {/* Connecting Timeline Line */}
-            <div className="hidden md:block absolute top-[28px] left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-brand-mint via-brand-teal/30 to-brand-mint z-0" />
+            <div className="hidden md:block absolute top-[24px] left-[12%] right-[12%] h-[1.5px] bg-[#cbdcd9] z-0" />
 
             {/* Step 1 */}
             <div className="flex flex-col items-center text-center relative z-10 group">
-              <div className="w-14 h-14 rounded-full bg-brand-mint text-brand-teal font-bold flex items-center justify-center border-2 border-white shadow-md mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">1</div>
+              <div className="w-12 h-12 rounded-full bg-[#eef6f5] text-brand-teal font-bold flex items-center justify-center border border-brand-teal/20 shadow-xs mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">1</div>
               <h4 className="font-bold text-[#1c2e2c] mb-2 text-sm sm:text-base">Initial Discussion</h4>
-              <p className="text-xs text-[#1c2e2c]/75 font-light leading-relaxed px-4">
+              <p className="text-xs sm:text-sm text-[#556966] font-light leading-relaxed px-4">
                 Medical reports and treatment requirements are reviewed to understand suitable next steps.
               </p>
             </div>
 
             {/* Step 2 */}
             <div className="flex flex-col items-center text-center relative z-10 group">
-              <div className="w-14 h-14 rounded-full bg-brand-mint text-brand-teal font-bold flex items-center justify-center border-2 border-white shadow-md mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">2</div>
+              <div className="w-12 h-12 rounded-full bg-[#eef6f5] text-brand-teal font-bold flex items-center justify-center border border-brand-teal/20 shadow-xs mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">2</div>
               <h4 className="font-bold text-[#1c2e2c] mb-2 text-sm sm:text-base">Arrangement Of Travel</h4>
-              <p className="text-xs text-[#1c2e2c]/75 font-light leading-relaxed px-4">
+              <p className="text-xs sm:text-sm text-[#556966] font-light leading-relaxed px-4">
                 Appointments, travel arrangements, and treatment schedules are coordinated carefully.
               </p>
             </div>
 
             {/* Step 3 */}
             <div className="flex flex-col items-center text-center relative z-10 group">
-              <div className="w-14 h-14 rounded-full bg-brand-mint text-brand-teal font-bold flex items-center justify-center border-2 border-white shadow-md mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">3</div>
+              <div className="w-12 h-12 rounded-full bg-[#eef6f5] text-brand-teal font-bold flex items-center justify-center border border-brand-teal/20 shadow-xs mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">3</div>
               <h4 className="font-bold text-[#1c2e2c] mb-2 text-sm sm:text-base">Treatment Support</h4>
-              <p className="text-xs text-[#1c2e2c]/75 font-light leading-relaxed px-4">
+              <p className="text-xs sm:text-sm text-[#556966] font-light leading-relaxed px-4">
                 Practical support is provided during consultations and treatment visits.
               </p>
             </div>
 
             {/* Step 4 */}
             <div className="flex flex-col items-center text-center relative z-10 group">
-              <div className="w-14 h-14 rounded-full bg-brand-mint text-brand-teal font-bold flex items-center justify-center border-2 border-white shadow-md mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">4</div>
+              <div className="w-12 h-12 rounded-full bg-[#eef6f5] text-brand-teal font-bold flex items-center justify-center border border-brand-teal/20 shadow-xs mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">4</div>
               <h4 className="font-bold text-[#1c2e2c] mb-2 text-sm sm:text-base">Guidance & Follow-Ups</h4>
-              <p className="text-xs text-[#1c2e2c]/75 font-light leading-relaxed px-4">
+              <p className="text-xs sm:text-sm text-[#556966] font-light leading-relaxed px-4">
                 With the help of regular recommendations and follow-up reviews, HPT coordinates your recovery pathway even after returning home.
               </p>
             </div>
@@ -625,7 +658,7 @@ export default function Home() {
           </div>
 
           {/* Full-width dark teal banner CTA with Booking Form */}
-          <div id="book" className="w-full bg-[#084843] rounded-[2.5rem] p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden shadow-2xl">
+          <div id="book" className="w-full bg-[#084843] rounded-3xl p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden shadow-md">
             <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
@@ -640,10 +673,10 @@ export default function Home() {
               </div>
 
               {/* Booking Form Integration */}
-              <div className="lg:col-span-5 w-full bg-white rounded-3xl p-6 sm:p-8 text-[#1c2e2c] border border-[#e5ebe9] shadow-[0_20px_50px_rgba(0,0,0,0.15)]">
+              <div className="lg:col-span-5 w-full bg-white rounded-3xl p-6 sm:p-8 text-[#1c2e2c] border border-[#e5ebe9] shadow-md">
                 {formSubmitted ? (
                   <div className="text-center py-10">
-                    <div className="w-14 h-14 bg-brand-mint rounded-full flex items-center justify-center mx-auto mb-6">
+                    <div className="w-14 h-14 bg-[#eef6f5] rounded-full flex items-center justify-center mx-auto mb-6">
                       <svg className="w-7 h-7 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
                       </svg>
@@ -663,7 +696,7 @@ export default function Home() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full text-xs px-4 py-3.5 rounded-xl border border-[#e5ebe9] focus:outline-none focus:border-brand-teal bg-[#fafdfc] focus:ring-1 focus:ring-brand-teal"
+                        className="w-full text-xs px-4 py-3.5 rounded-xl border border-[#e5ebe9] focus:outline-none focus:border-brand-teal bg-[#fafdfc] focus:ring-1 focus:ring-brand-teal/20"
                       />
                     </div>
                     <div className="grid grid-cols-2 gap-4">
@@ -673,7 +706,7 @@ export default function Home() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full text-xs px-4 py-3.5 rounded-xl border border-[#e5ebe9] focus:outline-none focus:border-brand-teal bg-[#fafdfc] focus:ring-1 focus:ring-brand-teal"
+                        className="w-full text-xs px-4 py-3.5 rounded-xl border border-[#e5ebe9] focus:outline-none focus:border-brand-teal bg-[#fafdfc] focus:ring-1 focus:ring-brand-teal/20"
                       />
                       <input
                         type="tel"
@@ -681,14 +714,14 @@ export default function Home() {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full text-xs px-4 py-3.5 rounded-xl border border-[#e5ebe9] focus:outline-none focus:border-brand-teal bg-[#fafdfc] focus:ring-1 focus:ring-brand-teal"
+                        className="w-full text-xs px-4 py-3.5 rounded-xl border border-[#e5ebe9] focus:outline-none focus:border-brand-teal bg-[#fafdfc] focus:ring-1 focus:ring-brand-teal/20"
                       />
                     </div>
                     <div>
                       <select
                         value={formData.treatment}
                         onChange={(e) => setFormData({ ...formData, treatment: e.target.value })}
-                        className="w-full text-xs px-4 py-3.5 rounded-xl border border-[#e5ebe9] focus:outline-none focus:border-brand-teal bg-[#fafdfc] focus:ring-1 focus:ring-brand-teal text-[#1c2e2c]/80"
+                        className="w-full text-xs px-4 py-3.5 rounded-xl border border-[#e5ebe9] focus:outline-none focus:border-brand-teal bg-[#fafdfc] focus:ring-1 focus:ring-brand-teal/20 text-[#1c2e2c]/80"
                       >
                         <option value="general">General Case Review</option>
                         <option value="dental">Dental Care Assistance</option>
@@ -702,12 +735,12 @@ export default function Home() {
                         rows={3}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full text-xs px-4 py-3.5 rounded-xl border border-[#e5ebe9] focus:outline-none focus:border-brand-teal bg-[#fafdfc] focus:ring-1 focus:ring-brand-teal resize-none"
+                        className="w-full text-xs px-4 py-3.5 rounded-xl border border-[#e5ebe9] focus:outline-none focus:border-brand-teal bg-[#fafdfc] focus:ring-1 focus:ring-brand-teal/20 resize-none"
                       />
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-[#084843] hover:bg-[#0c5953] text-white font-bold text-xs py-4 rounded-xl tracking-widest uppercase transition-all duration-300 shadow-md hover:shadow-lg"
+                      className="w-full bg-brand-teal hover:bg-brand-teal-light text-white font-bold text-xs py-4 rounded-xl tracking-wider uppercase transition-all duration-300 shadow-xs hover:shadow-sm"
                     >
                       Discuss My Options
                     </button>
@@ -722,7 +755,7 @@ export default function Home() {
       </section>
 
       {/* 7. FAQ ACCORDION SECTION */}
-      <section className="w-full bg-white py-20 lg:py-28 border-b border-brand-teal/5">
+      <section className="w-full bg-white py-20 lg:py-28 border-b border-[#e5ebe9]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
@@ -742,7 +775,7 @@ export default function Home() {
                 Find answers regarding case reviews, travel scheduling, and medical records review before planning treatment.
               </p>
               
-              <div className="w-full relative aspect-[4/3] rounded-3xl overflow-hidden shadow-sm border border-brand-teal/5">
+              <div className="w-full relative aspect-[4/3] rounded-3xl overflow-hidden shadow-sm border border-[#e5ebe9]">
                 <Image src="/mindera_support_group_clean.png" alt="FAQ support group" fill className="object-cover" sizes="(max-w-768px) 100vw, 400px" />
               </div>
             </div>
@@ -753,13 +786,13 @@ export default function Home() {
                 {faqItems.map((item, idx) => (
                   <div
                     key={idx}
-                    className="bg-[#f6faf9] border border-brand-teal/5 rounded-[1.5rem] p-6 text-left transition-all duration-300"
+                    className="bg-white border border-[#e5ebe9] rounded-2xl p-6 text-left transition-all duration-300 hover:border-brand-teal/20"
                   >
                     <button
                       onClick={() => toggleFaq(idx)}
                       className="w-full flex items-center justify-between text-base font-bold text-[#1c2e2c] focus:outline-none"
                     >
-                      <span className="pr-4">{item.question}</span>
+                      <span className="pr-4 text-[#1c2e2c]">{item.question}</span>
                       <span className="text-brand-teal text-xl font-light leading-none">
                         {activeFaq === idx ? "−" : "+"}
                       </span>
@@ -770,7 +803,7 @@ export default function Home() {
                         activeFaq === idx ? "max-h-[300px] mt-4 opacity-100" : "max-h-0 opacity-0"
                       }`}
                     >
-                      <p className="text-[#1c2e2c]/75 text-sm sm:text-[15px] leading-relaxed font-light border-t border-brand-teal/5 pt-4">
+                      <p className="text-[#556966] text-sm sm:text-[15px] leading-relaxed font-light border-t border-[#e5ebe9] pt-4">
                         {item.answer}
                       </p>
                     </div>

@@ -269,27 +269,7 @@ export default function DentalBridgesPage() {
                 A dental bridge is a way to replace one or more missing teeth without surgery. First, the dentist prepares the teeth on each side of the space for crowns. A custom-made bridge, with crowns on each end and an artificial tooth (or teeth) in the middle, is then cemented securely into place. This gives you your smile back, helps you chew and makes speaking easier.
               </p>
 
-              <div className="border-t border-brand-teal/10 pt-6 mt-6">
-                <h4 className="text-sm font-bold text-[#1c2e2c] uppercase tracking-wider mb-4">Why Patients Consider Bridge Treatment Abroad</h4>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-brand-teal">✦</span>
-                    <span className="text-sm text-[#1c2e2c]/80 font-light">Trusted clinics & experts</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-brand-teal">✦</span>
-                    <span className="text-sm text-[#1c2e2c]/80 font-light">Customized treatment plans</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-brand-teal">✦</span>
-                    <span className="text-sm text-[#1c2e2c]/80 font-light">Shorter waiting periods</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-brand-teal">✦</span>
-                    <span className="text-sm text-[#1c2e2c]/80 font-light">Affordable cost benefits</span>
-                  </div>
-                </div>
-              </div>
+
             </div>
 
             {/* Right Column: Square Image */}
@@ -591,41 +571,6 @@ export default function DentalBridgesPage() {
         </div>
       </section>
 
-      {/* 4. HOW HPT SUPPORTS YOUR BRIDGE TREATMENT */}
-      <section id="why-choose-us" className="w-full bg-white py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center">
-          
-          <div className="inline-flex items-center gap-2 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-            Why Choose Us
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1c2e2c] leading-[1.15] font-sans text-center">
-            How HPT Supports Your <br />
-            <span className="font-serif italic font-normal text-brand-teal block mt-2">
-              Dental Bridge Treatment?
-            </span>
-          </h2>
-
-          <p className="text-base sm:text-lg text-brand-teal/70 leading-relaxed font-light mt-6 mb-16 text-center max-w-3xl">
-            Getting dental treatment abroad requires proper planning and perfection in work. Our connection with trusted dental clinics and specialists makes it all possible.
-          </p>
-
-          <div className="w-full max-w-6xl relative">
-            {/* Group Counseling Image */}
-            <div className="w-full aspect-[16/9] relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-brand-teal/5">
-              <Image
-                src="/mindera_support_group_clean.png"
-                alt="Support group counseling session"
-                fill
-                className="object-cover"
-                sizes="(max-w-1200px) 100vw, 1000px"
-              />
-              <div className="absolute inset-0 bg-black/15 pointer-events-none" />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 5. CALL TO ACTION BANNER (CTA 1) */}
       <section className="w-full text-white py-24 sm:py-32 relative overflow-hidden flex items-center justify-center min-h-[500px]">
