@@ -16,6 +16,62 @@ export default function Home() {
     message: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [activeModal, setActiveModal] = useState<number | null>(null);
+
+  const supportStages = [
+    {
+      num: "01",
+      title: "Treatment Coordination Before Travel",
+      desc: "A successful medical journey starts with rigorous preparation. HPT coordinates the transfer, organization, and clinical review of your medical documents, dental scans, or diagnostic records. We ensure that partner clinics receive a complete case profile so they can outline precise treatment options, estimated timelines, and pricing details before you book any travel. Our coordinators assist you with pre-travel requirements, online consultations, and initial planning steps.",
+      image: "/mindera_consultation.png",
+      list: [
+        "Pre-travel clinical review of dental scans, medical records, and reports",
+        "Scheduling online preliminary consultations with specialized doctors",
+        "Detailed treatment plan preparation including cost estimates and options",
+        "Comprehensive flight booking coordination and travel timing planning",
+        "Assistance with visa document preparation if required by destination"
+      ]
+    },
+    {
+      num: "02",
+      title: "During Travel and Stay Support",
+      desc: "Arriving in a new country for medical treatment should feel seamless and secure. HPT handles the logistics of your arrival, local transit, and accommodation bookings. We partner with selected hotels located near treatment centers to guarantee comfort and convenience. A dedicated coordinator monitors your arrival times and handles airport pickups, hotel transfers, and scheduling updates so you can focus entirely on your health.",
+      image: "/travel_stay_support.png",
+      list: [
+        "Accommodation bookings at selected hotels close to the treatment facility",
+        "Dedicated airport reception, private transfers, and hotel check-in support",
+        "Coordinated local daily transit between hotel and clinical center",
+        "Professional translator support for smooth communication at all times",
+        "24/7 on-ground emergency contact and coordination team availability"
+      ]
+    },
+    {
+      num: "03",
+      title: "Coordination During Treatment",
+      desc: "During your clinic visits, clear coordination is vital to maintain a stress-free experience. HPT works directly with the clinic’s medical team to align appointment times, recovery intervals, and treatment steps. We adjust transit schedules dynamically based on your daily session duration. If companion travel support is needed, we arrange suitable accommodations and coordinate daily schedules to ensure comfort for you and your companion.",
+      image: "/mindera_team.png",
+      list: [
+        "Direct coordination with the clinic's administrative and medical staff",
+        "Daily schedule updates, timing adjustments, and appointment tracking",
+        "Companion travel arrangements, accommodation, and transport coordination",
+        "Immediate assistance with post-session prescriptions and pharmacy visits",
+        "Ensuring step-by-step transparency over clinical stages and next steps"
+      ]
+    },
+    {
+      num: "04",
+      title: "Post-Treatment Follow-up Support",
+      desc: "Your recovery journey continues long after you leave the clinic. HPT coordinates the retrieval and translation of your final medical reports, care recommendations, and prescription guidelines. Once you return home, we facilitate scheduled follow-up channels with clinical specialists to review your recovery progress. We remain your ongoing point of contact, ensuring continuous communication with the clinic.",
+      image: "/mindera_support_group_clean.png",
+      list: [
+        "Retrieval, translation, and secure shipping of final medical files",
+        "Scheduling structured follow-up reviews and virtual consultations",
+        "Establishing ongoing communication channels with your treating specialist",
+        "Assistance with local GP coordination and medical report sharing",
+        "Continuous recovery progress tracking and guidance support"
+      ]
+    }
+  ];
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -202,42 +258,15 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* Simplified Professional Workflow Diagram (Native HTML/SVG for Perfect Clarity) */}
-                <div className="w-full bg-[#fcfdfe] rounded-2xl p-6 border border-[#e5ebe9] flex flex-col items-center justify-center h-[180px]">
-                  <div className="flex items-center justify-between w-full max-w-[390px] relative px-4">
-                    {/* Connecting line */}
-                    <div className="absolute left-8 right-8 top-6 h-[1.5px] bg-[#cbdcd9] -z-0"></div>
-                    
-                    {/* Node 1 */}
-                    <div className="flex flex-col items-center gap-3.5 z-10 relative">
-                      <div className="w-12 h-12 rounded-full bg-[#eef6f5] border border-brand-teal text-brand-teal flex items-center justify-center shadow-xs">
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                      </div>
-                      <span className="text-[10px] font-bold tracking-wider text-brand-teal uppercase text-center">1. Case Review</span>
-                    </div>
-
-                    {/* Node 2 */}
-                    <div className="flex flex-col items-center gap-3.5 z-10 relative">
-                      <div className="w-12 h-12 rounded-full bg-[#eef6f5] border border-brand-teal text-brand-teal flex items-center justify-center shadow-xs">
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                        </svg>
-                      </div>
-                      <span className="text-[10px] font-bold tracking-wider text-brand-teal uppercase text-center">2. Planned Journey</span>
-                    </div>
-
-                    {/* Node 3 */}
-                    <div className="flex flex-col items-center gap-3.5 z-10 relative">
-                      <div className="w-12 h-12 rounded-full bg-white border border-slate-300 text-slate-400 flex items-center justify-center shadow-xs">
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      </div>
-                      <span className="text-[10px] font-bold tracking-wider text-slate-400 uppercase text-center">3. Recovery Support</span>
-                    </div>
-                  </div>
+                {/* Coordination Delivery Photo */}
+                <div className="w-full relative h-[180px] rounded-2xl overflow-hidden border border-[#e5ebe9] bg-[#fafdfc]">
+                  <Image
+                    src="/delivering_coordination.png"
+                    alt="Comprehensive clinical travel coordination delivery"
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-[1.02]"
+                    sizes="(max-w-1024px) 100vw, 450px"
+                  />
                 </div>
 
                 {/* 4 Custom SVG Dual-Tone Icons */}
@@ -297,159 +326,102 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            
-            {/* Card 1 */}
-            <div className="bg-[#fafdfc] hover:bg-white p-8 rounded-[2rem] border border-[#e5ebe9] flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-xs">01</div>
-                <h3 className="text-lg font-bold text-[#1c2e2c] mb-3 leading-snug">Treatment Coordination Before Travel</h3>
-                <p className="text-xs text-[#1c2e2c]/70 font-light leading-relaxed mb-6">
-                  Organising initial case details and files, preparing documentation for review by selected clinics before departure.
-                </p>
-                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-[#e5ebe9] pt-5">
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Consultation coordination</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Medical reports & appointments</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Treatment planning support</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Flight booking assistance</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-[#fafdfc] hover:bg-white p-8 rounded-[2rem] border border-[#e5ebe9] flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-xs">02</div>
-                <h3 className="text-lg font-bold text-[#1c2e2c] mb-3 leading-snug">During Travel and Stay Support</h3>
-                <p className="text-xs text-[#1c2e2c]/70 font-light leading-relaxed mb-6">
-                  Supporting communication, stay bookings, and medical appointments scheduling with selected international clinics.
-                </p>
-                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-[#e5ebe9] pt-5">
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Accommodation assistance</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Airport pickup & transfers</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Local transport coordination</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Translator support</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-[#fafdfc] hover:bg-white p-8 rounded-[2rem] border border-[#e5ebe9] flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-xs">03</div>
-                <h3 className="text-lg font-bold text-[#1c2e2c] mb-3 leading-snug">Coordination During Treatment</h3>
-                <p className="text-xs text-[#1c2e2c]/70 font-light leading-relaxed mb-6">
-                  Assisting with clinical session timings, on-ground accommodation needs, and immediate scheduling adjustments.
-                </p>
-                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-[#e5ebe9] pt-5">
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Clinic & hospital coordination</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Daily schedule support</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Companion travel assistance</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Recovery follow-up planning</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-[#fafdfc] hover:bg-white p-8 rounded-[2rem] border border-[#e5ebe9] flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-brand-teal text-white flex items-center justify-center font-bold text-xs mb-8 shadow-xs">04</div>
-                <h3 className="text-lg font-bold text-[#1c2e2c] mb-3 leading-snug">Post-Treatment Follow-up Support</h3>
-                <p className="text-xs text-[#1c2e2c]/70 font-light leading-relaxed mb-6">
-                  Coordinating recovery clinical files, follow-up scheduling, and ongoing communication with clinical specialists.
-                </p>
-                <ul className="space-y-3 text-xs text-[#1c2e2c]/85 border-t border-[#e5ebe9] pt-5 mb-8">
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Follow-up review channels</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Report translation & shipping</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Ongoing clinic communication</span>
-                  </li>
-                </ul>
-              </div>
-              <Link
-                href="#services"
-                className="text-xs font-bold text-brand-teal flex items-center gap-1.5 group-hover:text-brand-teal-light transition-colors"
+            {supportStages.map((stage, idx) => (
+              <div
+                key={idx}
+                onClick={() => setActiveModal(idx)}
+                className="group relative h-[380px] rounded-3xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border border-[#e5ebe9]"
               >
-                Detailed List of Services 
-                <svg className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
+                {/* Background Image */}
+                <Image
+                  src={stage.image}
+                  alt={stage.title}
+                  fill
+                  className="object-cover transition-transform duration-750 group-hover:scale-103"
+                  sizes="(max-w-1024px) 100vw, 250px"
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
 
+                {/* Floating Content */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-between text-left z-10">
+                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center font-bold text-xs border border-white/10">
+                    {stage.num}
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-2 leading-snug">
+                      {stage.title}
+                    </h3>
+                    <span className="text-xs text-white/70 font-light flex items-center gap-1.5 group-hover:text-white transition-colors">
+                      Learn details 
+                      <svg className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
+
+          {/* Detailed Support Stage Modal Popup */}
+          {activeModal !== null && (
+            <div 
+              className="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 md:p-6 overflow-y-auto"
+              onClick={() => setActiveModal(null)}
+            >
+              <div 
+                className="bg-white rounded-[2rem] max-w-4xl w-full p-8 md:p-12 shadow-2xl relative text-left animate-in fade-in zoom-in-95 duration-200 my-8"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Close Button */}
+                <button
+                  onClick={() => setActiveModal(null)}
+                  className="absolute top-6 right-6 md:top-8 md:right-8 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start mt-4">
+                  {/* Left Column: Stage Header & Description */}
+                  <div className="md:col-span-7">
+                    <div className="flex items-center gap-2.5 text-brand-teal text-xs font-bold tracking-[0.2em] uppercase mb-4">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
+                      STAGE {supportStages[activeModal].num}
+                    </div>
+
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#1c2e2c] mb-6 leading-tight pr-8">
+                      {supportStages[activeModal].title}
+                    </h3>
+
+                    <p className="text-sm sm:text-base text-[#556966] font-light leading-relaxed">
+                      {supportStages[activeModal].desc}
+                    </p>
+                  </div>
+
+                  {/* Right Column: Coordination Checklist */}
+                  <div className="md:col-span-5 md:border-l border-[#e5ebe9] md:pl-8">
+                    <h4 className="text-xs sm:text-sm font-bold text-[#1c2e2c] uppercase tracking-wider mb-5">What HPT Coordinates:</h4>
+                    <ul className="space-y-4 text-xs sm:text-[15px] text-[#1c2e2c]/85">
+                      {supportStages[activeModal].list.map((item, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <svg className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          )}
 
         </div>
       </section>
@@ -561,49 +533,179 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
-            {/* Connecting Timeline Line */}
-            <div className="hidden md:block absolute top-[24px] left-[12%] right-[12%] h-[1.5px] bg-[#cbdcd9] z-0" />
-
+          <div className="max-w-4xl mx-auto flex flex-col gap-10 relative">
+            
             {/* Step 1 */}
-            <div className="flex flex-col items-center text-center relative z-10 group">
-              <div className="w-12 h-12 rounded-full bg-[#eef6f5] text-brand-teal font-bold flex items-center justify-center border border-brand-teal/20 shadow-xs mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">1</div>
-              <h4 className="font-bold text-[#1c2e2c] mb-2 text-sm sm:text-base">Initial Discussion</h4>
-              <p className="text-xs sm:text-sm text-[#556966] font-light leading-relaxed px-4">
-                Medical reports and treatment requirements are reviewed to understand suitable next steps.
-              </p>
+            <div className="sticky top-[100px] z-10 bg-white border border-[#e5ebe9] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:shadow-md transition-all duration-300 flex flex-col md:flex-row h-fit md:h-[340px]">
+              <div className="w-full md:w-[340px] shrink-0 relative h-[200px] md:h-full">
+                <Image
+                  src="/journey_discussion.png"
+                  alt="Initial Case Review and Discussion"
+                  fill
+                  className="object-cover"
+                  sizes="(max-w-768px) 100vw, 340px"
+                />
+              </div>
+              <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center text-left flex-1 bg-white">
+                <div className="flex items-center gap-3.5 mb-3">
+                  <span className="w-8 h-8 rounded-full bg-[#eef6f5] border border-brand-teal/20 text-brand-teal text-sm font-bold flex items-center justify-center shrink-0">1</span>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#1c2e2c]">Initial Discussion & Case Review</h3>
+                </div>
+                <p className="text-xs sm:text-[13px] text-[#556966] font-semibold mb-3">
+                  Our process begins with an in-depth clinical case evaluation:
+                </p>
+                <ul className="space-y-2.5 text-xs sm:text-[13px] text-[#556966] font-light">
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Gathering and organizing diagnostic reports, dental scans, or clinical files.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Sharing profiles with accredited specialists to evaluate suitable treatment choices.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Preparing structured assessments detailing clinic profiles, treatments, and costs.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Step 2 */}
-            <div className="flex flex-col items-center text-center relative z-10 group">
-              <div className="w-12 h-12 rounded-full bg-[#eef6f5] text-brand-teal font-bold flex items-center justify-center border border-brand-teal/20 shadow-xs mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">2</div>
-              <h4 className="font-bold text-[#1c2e2c] mb-2 text-sm sm:text-base">Arrangement Of Travel</h4>
-              <p className="text-xs sm:text-sm text-[#556966] font-light leading-relaxed px-4">
-                Appointments, travel arrangements, and treatment schedules are coordinated carefully.
-              </p>
+            <div className="sticky top-[130px] z-20 bg-white border border-[#e5ebe9] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-all duration-300 flex flex-col md:flex-row h-fit md:h-[340px]">
+              <div className="w-full md:w-[340px] shrink-0 relative h-[200px] md:h-full">
+                <Image
+                  src="/journey_travel.png"
+                  alt="Arrangement of Travel and Accommodations"
+                  fill
+                  className="object-cover"
+                  sizes="(max-w-768px) 100vw, 340px"
+                />
+              </div>
+              <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center text-left flex-1 bg-white">
+                <div className="flex items-center gap-3.5 mb-3">
+                  <span className="w-8 h-8 rounded-full bg-[#eef6f5] border border-brand-teal/20 text-brand-teal text-sm font-bold flex items-center justify-center shrink-0">2</span>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#1c2e2c]">Arrangement of Travel & Stay</h3>
+                </div>
+                <p className="text-xs sm:text-[13px] text-[#556966] font-semibold mb-3">
+                  Once your choice is finalized, HPT coordinates complete travel logs:
+                </p>
+                <ul className="space-y-2.5 text-xs sm:text-[13px] text-[#556966] font-light">
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Booking hotel accommodations close to your selected clinical facility.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Aligning specific travel dates and durations with your medical schedule.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Organizing private airport arrival reception, transfers, and hotel check-in.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Step 3 */}
-            <div className="flex flex-col items-center text-center relative z-10 group">
-              <div className="w-12 h-12 rounded-full bg-[#eef6f5] text-brand-teal font-bold flex items-center justify-center border border-brand-teal/20 shadow-xs mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">3</div>
-              <h4 className="font-bold text-[#1c2e2c] mb-2 text-sm sm:text-base">Treatment Support</h4>
-              <p className="text-xs sm:text-sm text-[#556966] font-light leading-relaxed px-4">
-                Practical support is provided during consultations and treatment visits.
-              </p>
+            <div className="sticky top-[160px] z-30 bg-white border border-[#e5ebe9] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-md transition-all duration-300 flex flex-col md:flex-row h-fit md:h-[340px]">
+              <div className="w-full md:w-[340px] shrink-0 relative h-[200px] md:h-full">
+                <Image
+                  src="/journey_treatment.png"
+                  alt="On-ground Treatment and Clinical Support"
+                  fill
+                  className="object-cover"
+                  sizes="(max-w-768px) 100vw, 340px"
+                />
+              </div>
+              <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center text-left flex-1 bg-white">
+                <div className="flex items-center gap-3.5 mb-3">
+                  <span className="w-8 h-8 rounded-full bg-[#eef6f5] border border-brand-teal/20 text-brand-teal text-sm font-bold flex items-center justify-center shrink-0">3</span>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#1c2e2c]">On-Ground Treatment Support</h3>
+                </div>
+                <p className="text-xs sm:text-[13px] text-[#556966] font-semibold mb-3">
+                  During your stay at the destination, our team provides continuous support:
+                </p>
+                <ul className="space-y-2.5 text-xs sm:text-[13px] text-[#556966] font-light">
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Managing appointment timings and schedule adjustments directly with the clinic.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Arranging private daily transit between your hotel and the medical facility.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Assisting with companion accommodation, pharmacy visits, and translations.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Step 4 */}
-            <div className="flex flex-col items-center text-center relative z-10 group">
-              <div className="w-12 h-12 rounded-full bg-[#eef6f5] text-brand-teal font-bold flex items-center justify-center border border-brand-teal/20 shadow-xs mb-6 group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">4</div>
-              <h4 className="font-bold text-[#1c2e2c] mb-2 text-sm sm:text-base">Guidance & Follow-Ups</h4>
-              <p className="text-xs sm:text-sm text-[#556966] font-light leading-relaxed px-4">
-                With the help of regular recommendations and follow-up reviews, HPT coordinates your recovery pathway even after returning home.
-              </p>
+            <div className="sticky top-[190px] z-40 bg-white border border-[#e5ebe9] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-300 flex flex-col md:flex-row h-fit md:h-[340px]">
+              <div className="w-full md:w-[340px] shrink-0 relative h-[200px] md:h-full">
+                <Image
+                  src="/journey_recovery.png"
+                  alt="Post-Treatment Guidance and Recovery Follow-Ups"
+                  fill
+                  className="object-cover"
+                  sizes="(max-w-768px) 100vw, 340px"
+                />
+              </div>
+              <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center text-left flex-1 bg-white">
+                <div className="flex items-center gap-3.5 mb-3">
+                  <span className="w-8 h-8 rounded-full bg-[#eef6f5] border border-brand-teal/20 text-brand-teal text-sm font-bold flex items-center justify-center shrink-0">4</span>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#1c2e2c]">Guidance & Recovery Follow-Ups</h3>
+                </div>
+                <p className="text-xs sm:text-[13px] text-[#556966] font-semibold mb-3">
+                  We remain your point of contact even after you return home:
+                </p>
+                <ul className="space-y-2.5 text-xs sm:text-[13px] text-[#556966] font-light">
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Retrieval and translation of complete medical reports and discharge instructions.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Establishing virtual consultation channels with your clinical specialists.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-3.5 h-3.5 text-brand-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Monitoring your long-term progress and coordinating care details with your GP.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-20 relative z-50">
             <Link
               href="/services/dental/implants"
               className="text-xs font-bold text-brand-teal border-b border-brand-teal/30 hover:border-brand-teal pb-0.5 tracking-wider uppercase inline-block transition-all"
