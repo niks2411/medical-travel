@@ -501,14 +501,14 @@ export default function FullMouthRestorationPage() {
                     Your Full Mouth Restoration Journey <span className="font-serif italic font-normal text-brand-teal">With HPT</span>
                   </h3>
 
-                  {/* Portrait Image Container */}
-                  <div className="w-full max-w-[340px] relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white mb-6">
+                  {/* Image Container */}
+                  <div className="w-full max-w-[480px] relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-xl border border-white bg-white mb-6">
                     <Image
-                      src="/mindera_consultation.png"
+                      src="/full mouth restoration.png"
                       alt="Specialist planning restoration"
                       fill
                       className="object-cover"
-                      sizes="(max-w-1024px) 100vw, 340px"
+                      sizes="(max-width: 1024px) 100vw, 480px"
                     />
                   </div>
 
